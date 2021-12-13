@@ -1,0 +1,55 @@
+.blog {
+
+  &__wrap {
+    @include maxWidth(1160px);
+  }
+
+
+  &__body {
+    text-align: left;
+    padding: 0 10px 10px;
+  }
+
+  &__meta {
+    text-align: left;
+    @include flex($align:center);
+    font-size: 1.2rem;
+
+    .-tag {
+      padding: 2px;
+      position: relative;
+      padding-right: 16px;
+
+      &::before {
+        content: "";
+        @include absolute($top:20%, $right:0);
+        width: 1px;
+        height: 14px;
+        background: $color-bg;
+      }
+    }
+
+    .-date {
+      padding-left: 16px;
+    }
+  }
+
+  &__item {
+    padding: 0 15px !important;
+    margin: 0 0 40px;
+  }
+
+  &__img {
+    &::before {
+      padding-top: 60%;
+    }
+  }
+
+  &__heading {
+    &--article {
+      font-weight: 700;
+      margin: 10px 0 20px;
+    }
+  }
+
+}

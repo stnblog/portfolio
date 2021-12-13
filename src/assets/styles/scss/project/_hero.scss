@@ -1,0 +1,178 @@
+.l-hero {
+  position: relative;
+  padding: 64px 64px 0;
+  height: 100vh;
+
+  @include mq(lg) {
+    height: 700px;
+    padding: 0;
+  }
+
+  @include mq(sm) {
+    height: 600px;
+  }
+
+
+
+  &__wrap {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+
+    &.is-anim {
+      & .l-hero__bg {
+        transform: scale(1);
+        opacity: 1;
+        filter: blur(0px) brightness(1);
+      }
+    }
+  }
+
+  &__bg {
+    @include bgCover;
+    background-position: bottom;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    transform: scale(1.1);
+    filter: blur(10px) brightness(1.7);
+    transition: transform 3s cubic-bezier(0.21, 0.75, 0.38, 0.95) 0s, opacity 1.2s ease 0s, filter 2s ease;
+  }
+
+  &__heading {
+    padding: 0 20px;
+    @include absCenter;
+    top: 40%;
+    width: 100%;
+    color: $color-bg;
+    z-index: 10;
+
+    .-en {
+      line-height: 2;
+      display: block;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      font-size: 3.25vw;
+      line-height: 1;
+
+      @include mq(xs) {
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+
+.is-loading {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10
+}
+
+.is-loading.is-active {
+  background: #fff;
+  opacity: 1
+}
+
+.is-loading.is-active::after {
+  display: block;
+  content: ""
+}
+
+@keyframes load-slide-anime1 {
+  from {
+    transform: translateX(-100%);
+    width: 0%
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes load-slide-anime {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(100%)
+  }
+}
+
+@keyframes load-slide-anime2 {
+  from {
+    transform: translateX(0)
+  }
+
+  to {
+    transform: translateX(-100%)
+  }
+}
+
+#load {
+  height: 100vh;
+  left: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000
+}
+
+
+.load {
+  overflow: hidden
+}
+
+.load::before {
+  background-color: #00da46;
+  content: "";
+  height: 100%;
+  pointer-events: none;
+  position: fixed;
+  right: 100%;
+  top: 0;
+  transition: right .3s ease-in;
+  width: 100%;
+  z-index: 9999
+}
+
+.load::after {
+  transform: translate3d(0, 0, 0)
+}
+
+.load.load-slideIn::after {
+  left: 0;
+  transform: translate(0, 0)
+}
+
+.load::after {
+  background-color: #00da46;
+  content: "";
+  height: 100%;
+  left: 100%;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  transition: left .3s cubic-bezier(.4, 0, .2, 1);
+  width: 100%;
+  z-index: 9999
+}
+
+.load.load-slide::after {
+  left: 0;
+  transform: translate(0, 0);
+  transition: transform .3s
+}
+
+.load.load-slideOut::after {
+  transform: translate(100%, 0)
+}

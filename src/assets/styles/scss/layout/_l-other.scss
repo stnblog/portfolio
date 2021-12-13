@@ -1,0 +1,58 @@
+.l-other {
+  @include mq(md) {
+    margin: 50px 0 0;
+  }
+
+  &__item {
+    // filter: grayscale(100%);
+    @include mq(md) {
+      margin: 30px 0 0;
+    }
+    a {
+      position: relative;
+      display: block;
+      padding: 54px;
+      @include bgCover;
+
+      &::after {
+        background: rgba($color: $color-bg, $alpha: 0.5);
+      }
+    }
+
+    &--contact {
+      a {
+        background-image: url(./../../assets/images/hero_01.jpg);
+      }
+    }
+
+    &--work {
+      a {
+        background-image: url(./../../assets/images/hero_02.jpg);
+      }
+    }
+  }
+
+  &__heading {
+    position: relative;
+    margin: 0;
+    color: $color-white;
+    z-index: 1;
+
+    & > span {
+      display: block;
+    }
+
+    & .-ja {
+      font-size: 1.2rem;
+    }
+
+    & .-en {
+      text-transform: uppercase;
+      overflow: hidden;
+      margin: 12px 0 0;
+      font-size: 2.6rem;
+    }
+
+
+  }
+}

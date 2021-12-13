@@ -1,0 +1,385 @@
+$indexWidth: 1015px;
+
+.index {
+
+  &--info {
+    @include absolute($bottom:0, $right:0);
+    padding: 30px;
+    background: $color-bg;
+  }
+
+  &__inner {
+    position: relative;
+    padding: 0 15px;
+
+
+    &--about {
+      padding: 80px 0 0;
+
+      @include mq-target(sm) {
+        padding: 120px 0 80px;
+      }
+    }
+
+    &--work,
+    &--blog {
+      overflow: hidden;
+    }
+  }
+
+  &__wrap {
+    &--about {
+      max-width: 1200px;
+    }
+  }
+
+  &__head {
+    &--about {
+      position: relative;
+      width: 44%;
+    }
+  }
+
+  &__body {
+    &--about {
+      position: relative;
+      margin-left: -3%;
+      width: 53%;
+      z-index: 10;
+
+      @include mq(md) {
+        @include maxWidth(560px);
+      }
+
+      &Inner {
+        position: relative;
+        text-align: left;
+        padding: 0 15px 10px;
+      }
+    }
+
+    &--work {
+      padding: 10px;
+      text-align: left;
+
+      p {
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &__item {
+    &--info {
+      &:not(:first-of-type) {
+        margin: 10px 0 0;
+      }
+
+      & time {
+        position: relative;
+        width: 140px;
+        display: inline-block;
+        font-size: 1.2rem;
+        color: $color-grey-light-3;
+
+        &::after {
+          background: $color-main;
+          bottom: 0;
+          content: "";
+          height: 1px;
+          margin: auto;
+          position: absolute;
+          right: 14px;
+          top: 0;
+          width: 40px;
+        }
+      }
+    }
+  }
+
+  &__column {
+    &--slidebtn {
+      @include flex($justify:center);
+
+      @include mq(xs) {
+        margin: 20px 0 0;
+      }
+    }
+  }
+
+  &__meta {
+    &--work {
+      text-align: left;
+      @include flex($align:center);
+      font-size: 1.3rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+
+      & .-tag {
+        @include flex($align:center);
+        position: relative;
+        padding-right: 16px;
+
+        &::before {
+          content: "";
+          @include absolute($top:20%, $right:0);
+          width: 1px;
+          height: 14px;
+          background: $color-main;
+        }
+      }
+
+      & .-date {
+        padding-left: 16px;
+      }
+    }
+  }
+
+  &__img {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: $box-shadow-light-1;
+
+    &::before {
+      padding-top: 62%;
+    }
+
+    &--about {
+      overflow: visible;
+      border-radius: 12px;
+      transition-delay: .4s;
+      z-index: 1;
+
+      &::before {
+        z-index: 1;
+      }
+
+      &::after {
+        content: "";
+        box-shadow: $box-shadow-dark-1;
+        @include absolute ($bottom: 50px, $left: 30px);
+        border-radius: 50%;
+        background: $color-sub;
+        width: 300px;
+        height: 300px;
+        z-index: -1;
+        transition: all 1s cubic-bezier(0.0, 0.0, 1.0, 1.0);
+
+        @include mq(md) {
+          width: 200px;
+          height: 200px;
+        }
+      }
+
+      &.is-anim {
+        &::after {
+          background: $color-red;
+        }
+      }
+
+      @include mq(md) {
+        margin: 30px auto 20px;
+      }
+    }
+  }
+
+  &__heading {
+
+    &--about {
+      color: $color-sub;
+      margin: 0 0 20px;
+
+      &>span {
+        display: block;
+        line-height: 1;
+        letter-spacing: .1em;
+      }
+
+      & .-en {
+        font-size: 1.2rem;
+        overflow: hidden;
+      }
+
+      & .-ja {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 2.4rem;
+        margin: 10px 0 0;
+
+
+      }
+    }
+
+    &--work {
+      font-size: 2.6rem;
+      margin: 6px 0 16px;
+    }
+
+    &--article {
+      font-size: 1.5rem;
+      text-align: left;
+      letter-spacing: 0.075em;
+      line-height: 1.5;
+      margin: 16px 0 6px;
+    }
+  }
+
+  &__txt {
+    text-align: left;
+    margin-bottom: 30px;
+
+    &--about {
+      & .-intro {
+        font-size: 1.4rem;
+        line-height: 2;
+        margin: 30px 0;
+      }
+
+      & .-name {
+        text-align: right;
+        color: $color-sub;
+      }
+    }
+  }
+
+  &__btn {
+    &--slider {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid $color-sub;
+      right: initial;
+      left: initial;
+
+      &::after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        @include bgCover;
+
+      }
+
+      &Prev {
+        &::after {
+          background-image: url(./../../assets/images/svg/arrow/arrow-left.svg);
+        }
+      }
+
+      &Next {
+        margin-left: 4px;
+        &::after {
+          background-image: url(./../../assets/images/svg/arrow/arrow-right.svg);
+        }
+      }
+    }
+  }
+
+  &__foot {
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    a {
+      position: relative;
+      padding: 24px 0;
+      @include flex($justify:center, $align:center);
+      text-transform: uppercase;
+      transition: transform .6s ease;
+
+      &:hover,
+      &:active {
+        opacity: 0.5;
+
+        .-btn::after {
+          transform: rotate(90deg);
+        }
+      }
+
+      & .-btn {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        margin-right: 20px;
+        position: relative;
+        display: inline-block;
+        top: -1px;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          background: $color-sub;
+          display: block;
+        }
+
+        &::before {
+          height: 1px;
+          width: 100%;
+          top: 50%;
+        }
+
+        &::after {
+          width: 1px;
+          height: 100%;
+          left: 50%;
+          transition: all .3s ease;
+        }
+
+
+      }
+    }
+  }
+}
+
+
+
+.index__heading {
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  color: $color-sub;
+  font-weight: 500;
+  margin: 0 0 60px;
+  padding: 0 calc((100vw - $indexWidth) / 2);
+
+  @include mq(md) {
+    margin: 80px 0 40px;
+  }
+
+  &::after {
+    content: "";
+    @include absolute($top:40%, $left:0);
+    width: 0;
+    height: 1px;
+    background: $color-sub;
+    transition: all 1s ease;
+    transition-delay: .4s;
+  }
+
+  &.is-anim {
+    &::after {
+      width: 100%;
+    }
+  }
+
+  & .-ja {
+    display: block;
+    margin: 4px 0 0;
+    padding: 0 24px;
+  }
+
+  & .-en {
+    position: relative;
+    z-index: 10;
+    background: $color-bg;
+    display: inline-block;
+    padding: 0 24px;
+    font-size: 2.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    @include mq(xs) {
+      font-size: 2.4rem;
+    }
+  }
+}

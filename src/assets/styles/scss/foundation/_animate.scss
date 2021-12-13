@@ -1,0 +1,192 @@
+$fades:("Up": translateY(40px),
+  "Down": translateY(-40px),
+  "Left": translateX(40px),
+  "Right": translateX(-40px));
+
+@each $key,
+$fade in $fades {
+
+  .js-scroll--fade#{$key} {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: ($fade);
+    transition: opacity 1.6s, transform 1s;
+
+    &.is-anim {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+}
+
+
+
+.js-scroll {
+  &--slide {
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(50%);
+    transition: 1s all;
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+
+    &.is-anim {
+      opacity: 1;
+      overflow: visible;
+      transform: translate(0);
+    }
+  }
+
+  &--cover {
+    &Left {
+      &::before,
+      &::after {
+        content: '';
+        @include absolute($left:0, $top:0);
+        height: 100%;
+        width: 100%;
+        transition: transform .8s cubic-bezier(0.61, 1, 0.88, 1);
+      }
+
+      &::before {
+        background: $color-bg;
+        transition-delay: .2s;
+        z-index: 10;
+      }
+
+      &::after {
+        background: $color-bg;
+        z-index: 11;
+      }
+
+      &.is-anim {
+
+        &::before,
+        &::after {
+          transform: translateX(100%);
+        }
+      }
+    }
+
+    &Right {
+      &::before,
+      &::after {
+        @extend .js-scroll--coverLeft;
+        @include absolute($right:0, $top:0);
+      }
+
+      &.is-anim {
+
+        &::before,
+        &::after {
+          transform: translateX(-100%);
+        }
+      }
+    }
+  }
+
+  &--scale {
+    transform: scale(0.9);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+
+    &.is-anim {
+      opacity: 1;
+      transform: scale(1);
+      visibility: visible;
+    }
+
+    &-delay {
+      opacity: 0;
+
+      &.is-anim {
+        opacity: 1;
+        @include animation($name: kf-img-show,
+          $duration: 0.65s,
+          $timing-function: ease,
+          $fill-mode: both);
+
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            animation-delay: $i * 0.2s;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* ===============================  char  =============================== */
+
+.animate-heading {
+  opacity: 0;
+
+  &.inview {
+    opacity: 1;
+
+    & .char {
+      display: inline-block;
+    }
+  }
+
+  & .char {
+    opacity: 0;
+  }
+}
+
+
+.animate-heading.inview .char {
+  @include animation($name: kf-animate-chars,
+    $duration: 0.6s,
+    $timing-function: ease,
+    $fill-mode: both);
+
+  @for $i from 1 through 30 {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * 0.1s;
+    }
+  }
+}
+
+
+@keyframes kf-img-show {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes kf-animate-chars {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+    // transform: translateY(0);
+  }
+}
+
+@keyframes kf-animate-slide {
+  0% {
+    opacity: 0;
+    transform: translateX(10%)
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0)
+  }
+}

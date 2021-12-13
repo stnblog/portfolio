@@ -1,0 +1,112 @@
+.p-skill {
+
+  &__inner {
+    position: relative;
+    padding: 0 15px;
+
+
+    @include mq(md) {
+      margin: 80px 0 0;
+      padding: 20px 15px 50px;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    padding: 10px calc((100vw - $width) / 2) 0;
+}
+
+  &__slideWrap {
+    width: 100%;
+    display: flex;
+  }
+
+  &__slide {
+    border: 2px solid $color-main;
+    flex-shrink: 0;
+  }
+
+
+
+  &__scrollbar {
+    &--slide {
+      position: relative;
+      cursor: grab;
+      left: 0;
+      height: 4px;
+      margin-top: 80px;
+      background: $color-grey-light-4;
+
+      & .swiper-scrollbar-drag {
+        background: $color-grey-dark-2;
+      }
+    }
+  }
+
+  &__item {
+    &--sliderBg {
+      z-index: 50;
+      background: $color-white;
+      border-radius: 50%;
+      box-shadow: $box-shadow-dark-1;
+      border: 2px solid $color-bg;
+      @include absCenter;
+      // animation: fluidrotate 30s ease 0s infinite;
+      @include bgCover;
+      opacity: 0;
+      width: 300px;
+      height: 300px;
+      transition: opacity 0.5s ease 0s;
+    }
+  }
+
+  &__img {
+    overflow: visible;
+    // animation: fluidrotate 30s ease 0s infinite;
+    background: $color-sub;
+    border-radius: 12%;
+    width: 150px;
+    height: 150px;
+    // padding: 0 40px;
+    margin: auto;
+    &::before {
+      // padding-top: 60%;
+    }
+  }
+
+  &__cap {
+    padding: 2px 16px;
+    background: $color-bg;
+    color: $color-white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  &__txt {
+    margin: 10px 0 0;
+    font-weight: 500;
+    border-top: $line;
+    font-size: 1.3rem;
+    letter-spacing: .1em;
+    padding: 10px;
+    text-align: left;
+
+    // color: $color-white;
+  }
+}
+
+
+
+[data-skillBg="1"] .p-skill__item--sliderBg:nth-child(1),
+[data-skillBg="2"] .p-skill__item--sliderBg:nth-child(2),
+[data-skillBg="3"] .p-skill__item--sliderBg:nth-child(3),
+[data-skillBg="4"] .p-skill__item--sliderBg:nth-child(4),
+[data-skillBg="5"] .p-skill__item--sliderBg:nth-child(5),
+[data-skillBg="6"] .p-skill__item--sliderBg:nth-child(6) {
+  opacity: 1;
+}

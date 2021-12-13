@@ -1,0 +1,167 @@
+<% let pageId = 'about'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../_inc/_header', { pageId: pageId }) %>
+
+<!-- <h1><%= 'Hello, EJS'%></h1> -->
+
+
+<!-- <div class="c-heading inview">
+  <h1 class="c-heading__main inview js-scroll__fadeIn--up">
+    <span class="-en">ABOUT</span>
+    <span class="-ja">私について</span>
+  </h1>
+</div> -->
+
+
+<main class="js-first-view l-main">
+
+  <div class="c-heading inview">
+    <h1 class="c-heading__main inview js-scroll--fadeUp">
+      <span class="-en">WORK</span>
+      <span class="-ja">制作物一覧</span>
+    </h1>
+  </div>
+
+
+
+  <section id="index-work">
+    <div class="index__inner index__inner--work inview">
+
+
+
+      <div class="container index__wrap--about mb-16">
+        <div class="row items-center justify-center">
+
+          <div class="index__head--about u-dp-pc">
+            <figure class="c-picture__img index__img--about inview">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/profile_01.png" alt="about_01" loading="lazy">
+              </picture>
+            </figure>
+          </div>
+
+          <div class="index__body--about">
+            <div class="index__body--aboutInner">
+
+              <h2 class="index__heading--about">
+                <span class="-en animate-heading">わたしについて</span>
+                <span class="-ja animate-heading">S.TANABE</span>
+              </h2>
+              <div class="inview js-scroll--fadeUp">
+
+                <div class="u-dp-sp">
+                  <figure class="c-picture__img index__img--about inview">
+                    <picture class="c-picture__img--inner">
+                      <img src="/assets/images/profile_01.png" alt="about_02" loading="lazy">
+                    </picture>
+                  </figure>
+                </div>
+
+
+                <div class="index__txt--about">
+                  <!-- <p class="-name"><strong>NAME：S.TANABE</strong></p> -->
+                  <p class="-intro">
+                    aNCHORは「港」です。私たちと同じ夢を持つ人々が、個人・会社、大小を問わず集まり、「アンカー」を下ろして共にプロジェクトを遂行する。プロジェクトが終わると旅立ち、どこかで経験を積んでいつの日かまた集まり、より大きなプロジェクトを進める―。これがaNCHORの思い描く仕事の姿であり、クリエイティヴに力を注ぐ方が夢を実現するための係留所でありたいと考えています。
+                  </p>
+                  <p class="text-right">
+                    <a class="c-button c-button--border" href="/about">read more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="index__heading inview">
+        <span class="-en animate-heading">SKILL</span>
+        <span class="-ja animate-heading">できること</span>
+      </h2>
+
+
+
+      <div class="swiper-container inview js-scroll--slide index__slider js-index-slider">
+        <!-- <p class="index__txt">
+          画像をクリックで詳細ページへ遷移します。もしよろしければご覧ください。<br />
+          作品についてご指摘等あればメール、又はコンタクトフォームからご連絡お願いします。
+        </p> -->
+
+        <!-- <p class="index__txt text-left">
+          デザイン力を上げたり、引き出しを増やす目的のサイトレビューが主なブログコンテンツです。<br />
+        </p> -->
+
+
+        <div class="swiper-wrapper index__slideWrap">
+          <div class="swiper-slide index__slide">
+            <figure class="c-picture__img p-skill__img">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/skill/html.png" alt="">
+              </picture>
+            </figure>
+            <p class="p-skill__txt">
+              photoshop、figmaのデザインカンプからレスポンシブコーディングを行った経験があります。開発環境はSass, Ejs, Gulp, GITを使用しています。
+            </p>
+          </div>
+          <div class="swiper-slide index__slide">
+            <figure class="c-picture__img p-skill__img">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/skill/js.png" alt="">
+              </picture>
+            </figure>
+            <p class="p-skill__txt">
+              ウェブサイトの動的パーツやスクロールアニメーションの実装が可能です。matchheight, Swiper, fancybox等のプラグインをよく使用します。
+            </p>
+          </div>
+          <div class="swiper-slide index__slide">
+            <figure class="c-picture__img p-skill__img">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/skill/wp.png" alt="">
+              </picture>
+            </figure>
+            <p class="p-skill__txt">
+              WordPressのオリジナルテーマが作成ができます。既存サイトのCMS化や、テーマを利用した制作も可能です。
+            </p>
+          </div>
+          <div class="swiper-slide index__slide">
+            <figure class="c-picture__img p-skill__img">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/skill/ps.png" alt="">
+              </picture>
+            </figure>
+            </p>
+            <p class="p-skill__txt">
+              デザインカンプからCSSの取得や画像の書き出し、リサイズといった基本操作ができます。
+              また画像の切抜きや合成、色味調整が可能です。
+            </p>
+          </div>
+          <div class="swiper-slide index__slide">
+            <figure class="c-picture__img p-skill__img">
+              <picture class="c-picture__img--inner">
+                <img src="/assets/images/skill/tool.png" alt="">
+              </picture>
+            </figure>
+            <p class="p-skill__txt">
+              jquery、ES6によるDOM操作、IntersectionObserverやjquery.inviewを使用したスクロールアニメーションの実装が可能です。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container index__foot">
+        <div class="row justify-end">
+
+          <div class="col-6__sm index__column--slidebtn">
+            <div class="swiper-button-prev index__btn--slider index__btn--sliderPrev js-slider-btnPrev"></div>
+            <div class="swiper-button-next index__btn--slider index__btn--sliderNext js-slider-btnNext"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('./../_inc/_footer', { pageId: pageId }) %>

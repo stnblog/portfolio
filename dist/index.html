@@ -1,0 +1,581 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ポートフォリオ</title>
+  <meta name="description" content="説明文">
+
+  <link rel="icon" href="./assets/images/icon/favicon-32x32.png" sizes="32x32">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
+  <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="./assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
+  <link href="./assets/styles/main.css" rel="stylesheet">
+
+</head>
+
+
+
+<body data-skillBg="1">
+
+
+  <header id="js-header" class="l-header">
+    <div class="l-header__wrap">
+      <div class="l-header__row">
+        <p class="l-header__logo">
+          <a href="/">tnblog</a>
+        </p>
+        <nav class="l-header__nav u-dp-pc">
+          <ul class="l-header__list l-header__list--nav">
+            <li class="l-header__item--nav">
+              <a href="/">
+                <span class="-en">HOME</span>
+                <span class="-ja">ホーム</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/about">
+                <span class="-en">ABOUT</span>
+                <span class="-ja">私について</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/work">
+                <span class="-en">WORK</span>
+                <span class="-ja">制作物一覧</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/blog">
+                <span class="-en">BLOG</span>
+                <span class="-ja">ブログ</span>
+              </a>
+            </li>
+            <li class="l-header__item--nav">
+              <a href="/blog">
+                <span class="-en">CONTACT</span>
+                <span class="-ja">お問い合わせ</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <button class="l-drawer__trigger js-draw__trigger">
+    <span class="-line"></span>
+  </button>
+
+  <nav class="l-drawer__content js-draw__content">
+    <div class="l-drawer__wrap">
+      <ul class="l-drawer__list l-drawer__list--menu">
+        <li class="l-drawer__item">
+          <a href="/">
+            <span class="-en">HOME</span>
+            <span class="-ja">ホーム</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/about">
+            <span class="-en">about</span>
+            <span class="-ja">下北キャンプ場</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/hotel">
+            <span class="-en">hotel</span>
+            <span class="-ja">宿泊施設一覧</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/blog">
+            <span class="-en">TOPICS</span>
+            <span class="-ja">トピックス</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/shop">
+            <span class="-en">SHOP</span>
+            <span class="-ja">レンタルショップ</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="/faq">
+            <span class="-en">FAQ</span>
+            <span class="-ja">よくある質問</span>
+          </a>
+        </li>
+        <li class="l-drawer__item">
+          <a href="#">
+            <span class="-en">CONTACT</span>
+            <span class="-ja">お問い合わせ</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+<!-- <h1>Hello, EJS</h1> -->
+
+
+<div class="l-hero">
+  <div class="l-hero__wrap inview">
+    <div class="l-hero__bg c-mask" style="background-image: url(./assets/images/hero_01.jpg);"></div>
+    <h1 class="l-hero__heading">
+      <span class="-en animate-heading">
+        wellcome
+      </span>
+      <span class="-en animate-heading mt-8">
+        PORTFOLIO
+      </span>
+    </h1>
+
+
+    <div class="index--info">
+      <div class="index__inner--info text-left">
+        <h2>お知らせ</h2>
+
+        <ul class="index__list--info mt-8">
+          <li class="index__item--info">
+            <a href="#">
+              <p>
+                <time datetime="2021-12-01">2021.12.01</time>
+                <span>【Steamオータムセール開催記念】フォロー＆RTキャンペーン開催！</span>
+              </p>
+            </a>
+          </li>
+          <li class="index__item--info">
+            <a href="#">
+              <p>
+                <time datetime="2021-12-01">2021.12.01</time>
+                <span>【Steamオータムセール開催記念】フォロー＆RTキャンペーン開催！</span>
+              </p>
+            </a>
+          </li>
+          <li class="index__item--info">
+            <a href="#">
+              <p>
+                <time datetime="2021-12-01">2021.12.01</time>
+                <span>【Steamオータムセール開催記念】フォロー＆RTキャンペーン開催！</span>
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+<div class="js-first-view">
+
+
+  <main class="l-main">
+
+    <section id="index-about" class="">
+      <div class="index__inner index__inner--about">
+
+
+
+
+        <div class="container index__wrap--about">
+          <div class="row justify-center items-center">
+
+            <div class="index__head--about u-dp-pc">
+              <figure class="c-picture__img index__img--about inview">
+                <picture class="c-picture__img--inner">
+                  <img src="./assets/images/profile_01.png" alt="about_01" loading="lazy">
+                </picture>
+              </figure>
+            </div>
+
+            <div class="index__body--about">
+              <div class="index__body--aboutInner">
+
+                <h2 class="index__heading--about">
+                  <span class="-en animate-heading">わたしについて</span>
+                  <span class="-ja animate-heading">INTRODUCTION</span>
+                </h2>
+                <div class="inview js-scroll--fadeUp">
+
+                  <div class="u-dp-sp">
+                    <figure class="c-picture__img index__img--about inview">
+                      <picture class="c-picture__img--inner">
+                        <img src="./assets/images/profile_01.png" alt="about_02" loading="lazy">
+                      </picture>
+                    </figure>
+                  </div>
+
+
+                  <div class="index__txt--about">
+                    <!-- <p class="-name"><strong>NAME：S.TANABE</strong></p> -->
+                    <p class="-intro">
+                      aNCHORは「港」です。私たちと同じ夢を持つ人々が、個人・会社、大小を問わず集まり、「アンカー」を下ろして共にプロジェクトを遂行する。プロジェクトが終わると旅立ち、どこかで経験を積んでいつの日かまた集まり、より大きなプロジェクトを進める―。これがaNCHORの思い描く仕事の姿であり、クリエイティヴに力を注ぐ方が夢を実現するための係留所でありたいと考えています。
+
+                    </p>
+                    <p class="text-right">
+                      <a class="c-button c-button--border" href="/about">read more</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="index-work">
+      <div class="index__inner index__inner--work inview">
+
+        <h2 class="index__heading inview">
+          <span class="-en animate-heading">portfolio</span>
+          <span class="-ja animate-heading">制作物一覧</span>
+        </h2>
+
+
+
+        <div class="swiper-container c-slider index__slider js-index-slider">
+          <div class="swiper-wrapper c-slider__wrap index__slideWrap">
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/work/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/thumb/pf_01.jpg" alt="" style="object-position: top;">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                マッチングアプリLP
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/work/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/thumb/pf_02.jpg" alt="" style="object-position: top;">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                マッチングアプリLP
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/thumb/pf_01.jpg" alt="" style="object-position: top;">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                マッチングアプリLP
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/thumb/pf_02.jpg" alt="" style="object-position: top;">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                マッチングアプリLP
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container index__foot">
+          <div class="row justify-center">
+
+
+            <div class="col-6__sm">
+              <a href="/work">
+                <span class="flex items-center justify-center">
+                  <span class="-btn"></span>
+                  read more
+                </span>
+              </a>
+            </div>
+
+            <div class="col-6__sm index__column--slidebtn">
+              <div class="swiper-button-prev index__btn--slider index__btn--sliderPrev js-slider-btnPrev"></div>
+              <div class="swiper-button-next index__btn--slider index__btn--sliderNext js-slider-btnNext"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="index-blog">
+      <div class="index__inner index__inner--blog inview">
+
+        <h2 class="index__heading inview">
+          <span class="-en animate-heading">ARTICLE</span>
+          <span class="-ja animate-heading">ブログ最新記事</span>
+        </h2>
+
+
+        <div class="swiper-container c-slider index__slider js-index-slider">
+
+          <div class="swiper-wrapper c-slider__wrap index__slideWrap">
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/banner/banner01.jpg" alt="">
+                  </picture>
+                </figure>
+              </a>
+
+              <h3 class="index__heading--article">
+                SNOOPY BOWLING COLLECTION 2021（株式会社ボウリングサービス）
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/banner/banner02.jpg" alt="">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                SNOOPY BOWLING COLLECTION 2021（株式会社ボウリングサービス）
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/banner/banner03.jpg" alt="">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                SNOOPY BOWLING COLLECTION 2021（株式会社ボウリングサービス）
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+            <div class="swiper-slide c-slider__slide index__slide">
+              <a href="/blog/detail" class="inview">
+                <figure class="c-picture__img index__img">
+                  <picture class="c-picture__img--inner">
+                    <img src="./assets/images/banner/banner04.jpg" alt="">
+                  </picture>
+                </figure>
+              </a>
+              <h3 class="index__heading--article">
+                SNOOPY BOWLING COLLECTION 2021（株式会社ボウリングサービス）
+              </h3>
+
+              <div class="index__meta--work">
+                <p class="-tag">
+                  ランディングページ
+                </p>
+                <p class="-date">2021.11.01</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="container index__foot">
+          <div class="row justify-center">
+
+
+            <div class="col-6__sm">
+              <a href="/blog">
+                <span class="flex items-center justify-center">
+                  <span class="-btn"></span>
+                  read more
+                </span>
+              </a>
+            </div>
+
+            <div class="col-6__sm index__column--slidebtn">
+              <div class="swiper-button-prev index__btn--slider index__btn--sliderPrev js-slider-btnPrev"></div>
+              <div class="swiper-button-next index__btn--slider index__btn--sliderNext js-slider-btnNext"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="index-about" class="pb-32" style="overflow: hidden;">
+      <div class="index__inner index__inner--other">
+
+        <h2 class="index__heading text-left inview">
+          <span class="-en">OTHER</span>
+          <span class="-ja">その他のコンテンツ</span>
+        </h2>
+
+
+        <div class="container">
+
+          <ul class="row">
+            <li class="l-other__item l-other__item--work col-6__sm col-4__md inview js-scroll--scale-delay">
+              <a href="#" class="c-mask">
+                <h2 class="l-other__heading">
+                  <span class="-ja">制作物一覧</span>
+                  <span class="-en">PORTFOLIO</span>
+                </h2>
+              </a>
+            </li>
+            <li class="l-other__item l-other__item--work col-6__sm col-4__md inview js-scroll--scale-delay">
+              <a href="#" class="c-mask">
+                <h2 class="l-other__heading">
+                  <span class="-ja">加工画像</span>
+                  <span class="-en">GALLERY</span>
+                </h2>
+              </a>
+            </li>
+            <li class="l-other__item l-other__item--contact col-6__sm col-4__md inview js-scroll--scale-delay">
+              <a href="#" class="c-mask">
+                <h2 class="l-other__heading">
+                  <span class="-ja">お問い合わせはこちら</span>
+                  <span class="-en">CONTACT</span>
+                </h2>
+              </a>
+            </li>
+          </ul>
+
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  
+
+<footer class="l-footer" id="footer">
+  <div class="container">
+    <a href="#" class="l-footer__logo">
+      tnblog
+    </a>
+    <div class="l-footer__sns">
+      <a href="#" class="l-footer__sns--icon -fb">
+        <img src="./assets/images/svg/social/facebook.svg" alt="facebook">
+      </a>
+      <a href="#" class="l-footer__sns--icon -tw">
+        <img src="./assets/images/svg/social/twitter.svg" alt="twitter">
+      </a>
+      <a href="mailto:user@dammy.com?body=お問い合わせ内容" class="l-footer__sns--icon -mail">
+        <img src="./assets/images/svg/social/mail.svg" alt="mail">
+      </a>
+    </div>
+    <p class="l-footer__copyright">
+      Copyright © tnblog, All rights reserved.
+    </p>
+  </div>
+
+</footer>
+</div>
+
+
+<!-- <script src="/assets/scripts/vendors/gsap.min.js"></script> -->
+<script>
+  var userAgent = window.navigator.userAgent.toLowerCase();
+
+  if (userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+    window.location.href('https://www.google.com/?hl=ja')
+  }
+</script>
+
+<!-- vendors -->
+<script src="./assets/scripts/vendors/jquery.min.js"></script>
+<script src="./assets/scripts/vendors/isotope.pkgd.min.js"></script>
+<script src="./assets/scripts/vendors/jquery.matchHeight-min.js"></script>
+<script src="./assets/scripts/vendors/intersection-observer.js"></script>
+<script src="./assets/scripts/vendors/swiper-bundle.min.js"></script>
+
+
+
+
+
+<script src="./assets/scripts/swiper.js"></script>
+<script src="./assets/scripts/main.js"></script>
+
+</body>
+
+</html>
+

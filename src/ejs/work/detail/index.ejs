@@ -1,0 +1,133 @@
+<% let pageId = 'workDetail'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../../_inc/_header', {pageId: pageId }) %>
+
+<div class="js-first-view l-main">
+
+  <section class="single">
+    <div class="single__inner">
+
+      <div class="single__wrap">
+        <div class="single__row">
+          <article class="single__post">
+            <div class="single__head">
+
+              <figure class="c-picture__img single__img--head">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/portfolio/pf_01.jpg" alt="">
+                </picture>
+              </figure>
+
+              <h1 class="single__heading">
+                マッチングアプリ「tboo」の紹介ページ
+              </h1>
+
+              <div class="flex justify-between items-center">
+
+                  <p class="single__txt--date">
+                    公開日:2021.10.01 - 最終更新日:2021.10.01
+                  </p>
+
+                  <p class="single__txt--date flex items-center">
+                    <span class="c-label">ウェブサイト</span>
+                  </p>
+
+              </div>
+
+              <div class="single__gallery flex">
+                <figure>
+                  <img src="/assets/images/portfolio/pf_02.jpg" alt="">
+                </figure>
+              </div>
+
+
+
+              <div class="single__detail">
+
+                <dl class="single__list--detail">
+                  <dt>開発環境</dt>
+                  <dd>Sass, ejs, gulp, Git</dd>
+                </dl>
+
+                <dl class="single__list--detail">
+                  <dt>種別</dt>
+                  <dd>LPページ</dd>
+                </dl>
+
+                <dl class="single__list--detail">
+                  <dt>仕様</dt>
+                  <dd>PC・スマートフォン</dd>
+                </dl>
+                <dl class="single__list--detail">
+                  <dt>デザイン</dt>
+                  <dd>figma</dd>
+                </dl>
+                <dl class="single__list--detail">
+                  <dt>ブラウザ</dt>
+                  <dd>IE対応</dd>
+                </dl>
+
+              </div>
+
+
+            </div>
+            <div class="single__body">
+              <div class="single__entry">
+                <h2>まえおき</h2>
+                <p>さて、本題に入る前に過去のリリース方法を簡単に解説します。</p>
+                <p>Androidアプリをアプリストア(GooglePlay)にリリースする場合、<br />
+                  Google側で決められた形にして、ストアにアップロードします。</p>
+                <p>その形式というのが「<span style="font-size: 14pt;"><strong>APK　(Android Application
+                      Package)</strong></span>」です。
+                </p>
+                <p>APKはスマートフォンや、タブレットなどAndroidを搭載したハードウェアで実行できる形式となります。</p>
+                <h2>本題</h2>
+                <p>前項で「APK」の話をしましたが、<br />
+                  2021年8月から、新規のアップロードを行う場合は、「<span style="font-size: 14pt;"><strong>AAB　(Android App
+                      Bundle)</strong></span>」という形式でないとアップロード出来なくなりました。</p>
+                <p><span
+                    style="font-size: 10pt; color: #ff0000;">※既に「APK」でリリースされていたアプリは、現在(2021年10月)「APK」のままアプリの更新ができるようです。</span>
+                </p>
+                <h2>AABについて</h2>
+                <h3>AABとは</h3>
+                <p>以下Google公式サイト<br />
+                  <a href="https://developer.android.com/guide/app-bundle?hl=ja" target="_blank" rel="noopener">Android
+                    Developers -Android App Bundle-</a></p>
+
+
+
+              </div>
+            </div>
+
+            <div class="row items-center">
+              <div class="col-3">
+                <p class="c-button--square">
+                  <a href="#">PREV</a>
+                </p>
+              </div>
+
+              <div class="col-6">
+                <p class="c-button--square">
+                  <a href="#">VIEW ALL</a>
+                </p>
+              </div>
+              <div class="col-3">
+                <p class="c-button--square">
+                  <a href="#">NEXT</a>
+                </p>
+              </div>
+
+
+            </div>
+
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<%- include('./../../_inc/_footer', {pageId: pageId })  %>

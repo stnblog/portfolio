@@ -1,0 +1,99 @@
+.work {
+  &__inner {
+    padding: 0 0 80px;
+
+    @include mq(md) {
+      padding: 0 0 64px;
+    }
+  }
+
+  &__meta {
+    @include flex($align:center ,$justify:center);
+    font-size: 1.2rem;
+
+    .-tag {
+      @include flex($align:center);
+      position: relative;
+      padding-right: 16px;
+
+      &::before {
+        content: "";
+        @include absolute($top:20%, $right:0);
+        width: 1px;
+        height: 14px;
+        background: $color-main;
+      }
+    }
+
+    .-date {
+      padding-left: 16px;
+    }
+  }
+
+  &__list {
+    // margin: 140px 0 0;
+  }
+
+  &__item {
+    margin: 0 0 40px;
+  }
+
+  &__img {
+    position: relative;
+    margin: 10px 0;
+    &::before {
+      padding-top: 70%;
+    }
+
+    img {
+      object-position: top;
+    }
+
+    &::after {
+      content: "";
+      overflow: hidden;
+      @include absolute(0,0,0,0);
+      background: rgba($color: $color-bg, $alpha: .8);
+      width: 0;
+      height: 100%;
+      transition: all .4s ease-out;
+    }
+
+    &:hover {
+      .work__cap {
+        visibility: visible;
+        opacity: 1;
+        right: 50px;
+      }
+      &.work__img::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__cap {
+    @include absolute($bottom:50px,$right:20px);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 3;
+    transition: all .3s ease;
+    a {
+      font-weight: 300;
+      color: $color-white;
+      font-size: 1.6rem;
+      padding-bottom: 5px;
+      margin: 0;
+      border-bottom: 2px solid $color-white;
+    }
+  }
+
+  &__heading {
+
+    &--item {
+      color: $color-sub;
+      margin: 0;
+      font-size: 1.6rem;
+    }
+  }
+
+}
