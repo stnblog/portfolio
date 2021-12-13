@@ -496,345 +496,67 @@ figure {
   margin: 0;
 }
 
-.js-scroll--fadeUp {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  -webkit-transform: translateY(40px);
-  transform: translateY(40px);
-  -webkit-transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, transform 1s;
-  transition: opacity 1.6s, transform 1s, -webkit-transform 1s;
-}
-.js-scroll--fadeUp.is-anim {
-  opacity: 1;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-}
-
-.js-scroll--fadeDown {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  -webkit-transform: translateY(-40px);
-  transform: translateY(-40px);
-  -webkit-transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, transform 1s;
-  transition: opacity 1.6s, transform 1s, -webkit-transform 1s;
-}
-.js-scroll--fadeDown.is-anim {
-  opacity: 1;
-  -webkit-transform: translate(0);
-  transform: translate(0);
+@-webkit-keyframes kf-dp-inview {
+  0% {
+    opacity: 0;
+    display: none;
+    -webkit-transform: translateY(-189px);
+    transform: translateY(-189px);
+  }
+  10% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
-.js-scroll--fadeLeft {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  -webkit-transform: translateX(40px);
-  transform: translateX(40px);
-  -webkit-transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, transform 1s;
-  transition: opacity 1.6s, transform 1s, -webkit-transform 1s;
+@keyframes kf-dp-inview {
+  0% {
+    opacity: 0;
+    display: none;
+    -webkit-transform: translateY(-189px);
+    transform: translateY(-189px);
+  }
+  10% {
+    opacity: 1;
+    display: block;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
-.js-scroll--fadeLeft.is-anim {
-  opacity: 1;
-  -webkit-transform: translate(0);
-  transform: translate(0);
+@-webkit-keyframes kf-img-rotate {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20%) scale(1) rotateY(90deg);
+    transform: translateY(20%) scale(1) rotateY(90deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1) rotateY(0deg);
+    transform: translateY(0) scale(1) rotateY(0deg);
+  }
 }
-
-.js-scroll--fadeRight {
-  position: relative;
-  z-index: 2;
-  opacity: 0;
-  -webkit-transform: translateX(-40px);
-  transform: translateX(-40px);
-  -webkit-transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, -webkit-transform 1s;
-  transition: opacity 1.6s, transform 1s;
-  transition: opacity 1.6s, transform 1s, -webkit-transform 1s;
+@keyframes kf-img-rotate {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20%) scale(1) rotateY(90deg);
+    transform: translateY(20%) scale(1) rotateY(90deg);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(0) scale(1) rotateY(0deg);
+    transform: translateY(0) scale(1) rotateY(0deg);
+  }
 }
-.js-scroll--fadeRight.is-anim {
-  opacity: 1;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-}
-
-.js-scroll--slide {
-  opacity: 0;
-  overflow: hidden;
-  -webkit-transform: translateX(50%);
-  transform: translateX(50%);
-  -webkit-transition: 1s all;
-  transition: 1s all;
-  -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
-}
-.js-scroll--slide.is-anim {
-  opacity: 1;
-  overflow: visible;
-  -webkit-transform: translate(0);
-  transform: translate(0);
-}
-.js-scroll--coverLeft::before, .js-scroll--coverRight::before, .js-scroll--coverLeft::after, .js-scroll--coverRight::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: -webkit-transform 0.8s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: transform 0.8s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: transform 0.8s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.8s cubic-bezier(0.61, 1, 0.88, 1);
-}
-.js-scroll--coverLeft::before, .js-scroll--coverRight::before {
-  background: #191919;
-  -webkit-transition-delay: 0.2s;
-  transition-delay: 0.2s;
-  z-index: 10;
-}
-.js-scroll--coverLeft::after, .js-scroll--coverRight::after {
-  background: #191919;
-  z-index: 11;
-}
-.js-scroll--coverLeft.is-anim::before, .is-anim.js-scroll--coverRight::before, .js-scroll--coverLeft.is-anim::after, .is-anim.js-scroll--coverRight::after {
-  -webkit-transform: translateX(100%);
-  transform: translateX(100%);
-}
-.js-scroll--coverRight::before, .js-scroll--coverRight::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-.js-scroll--coverRight.is-anim::before, .js-scroll--coverRight.is-anim::after {
-  -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
-}
-.js-scroll--scale {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9);
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
-}
-.js-scroll--scale.is-anim {
-  opacity: 1;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-  visibility: visible;
-}
-.js-scroll--scale-delay {
-  opacity: 0;
-}
-.js-scroll--scale-delay.is-anim {
-  opacity: 1;
-  -webkit-animation-name: kf-img-show;
-  animation-name: kf-img-show;
-  -webkit-animation-duration: 0.65s;
-  animation-duration: 0.65s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-  animation-direction: normal;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.js-scroll--scale-delay.is-anim:nth-child(1) {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(2) {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(3) {
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(4) {
-  -webkit-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(5) {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(6) {
-  -webkit-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(7) {
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.js-scroll--scale-delay.is-anim:nth-child(8) {
-  -webkit-animation-delay: 1.6s;
-  animation-delay: 1.6s;
-}
-
-/* ===============================  char  =============================== */
-.animate-heading {
-  opacity: 0;
-}
-.animate-heading.inview {
-  opacity: 1;
-}
-.animate-heading.inview .char {
-  display: inline-block;
-}
-.animate-heading .char {
-  opacity: 0;
-}
-
-.animate-heading.inview .char {
-  -webkit-animation-name: kf-animate-chars;
-  animation-name: kf-animate-chars;
-  -webkit-animation-duration: 0.6s;
-  animation-duration: 0.6s;
-  -webkit-animation-timing-function: ease;
-  animation-timing-function: ease;
-  -webkit-animation-delay: 0s;
-  animation-delay: 0s;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1;
-  -webkit-animation-direction: normal;
-  animation-direction: normal;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-.animate-heading.inview .char:nth-child(1) {
-  -webkit-animation-delay: 0.1s;
-  animation-delay: 0.1s;
-}
-.animate-heading.inview .char:nth-child(2) {
-  -webkit-animation-delay: 0.2s;
-  animation-delay: 0.2s;
-}
-.animate-heading.inview .char:nth-child(3) {
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-}
-.animate-heading.inview .char:nth-child(4) {
-  -webkit-animation-delay: 0.4s;
-  animation-delay: 0.4s;
-}
-.animate-heading.inview .char:nth-child(5) {
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-}
-.animate-heading.inview .char:nth-child(6) {
-  -webkit-animation-delay: 0.6s;
-  animation-delay: 0.6s;
-}
-.animate-heading.inview .char:nth-child(7) {
-  -webkit-animation-delay: 0.7s;
-  animation-delay: 0.7s;
-}
-.animate-heading.inview .char:nth-child(8) {
-  -webkit-animation-delay: 0.8s;
-  animation-delay: 0.8s;
-}
-.animate-heading.inview .char:nth-child(9) {
-  -webkit-animation-delay: 0.9s;
-  animation-delay: 0.9s;
-}
-.animate-heading.inview .char:nth-child(10) {
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-.animate-heading.inview .char:nth-child(11) {
-  -webkit-animation-delay: 1.1s;
-  animation-delay: 1.1s;
-}
-.animate-heading.inview .char:nth-child(12) {
-  -webkit-animation-delay: 1.2s;
-  animation-delay: 1.2s;
-}
-.animate-heading.inview .char:nth-child(13) {
-  -webkit-animation-delay: 1.3s;
-  animation-delay: 1.3s;
-}
-.animate-heading.inview .char:nth-child(14) {
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
-}
-.animate-heading.inview .char:nth-child(15) {
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
-}
-.animate-heading.inview .char:nth-child(16) {
-  -webkit-animation-delay: 1.6s;
-  animation-delay: 1.6s;
-}
-.animate-heading.inview .char:nth-child(17) {
-  -webkit-animation-delay: 1.7s;
-  animation-delay: 1.7s;
-}
-.animate-heading.inview .char:nth-child(18) {
-  -webkit-animation-delay: 1.8s;
-  animation-delay: 1.8s;
-}
-.animate-heading.inview .char:nth-child(19) {
-  -webkit-animation-delay: 1.9s;
-  animation-delay: 1.9s;
-}
-.animate-heading.inview .char:nth-child(20) {
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-.animate-heading.inview .char:nth-child(21) {
-  -webkit-animation-delay: 2.1s;
-  animation-delay: 2.1s;
-}
-.animate-heading.inview .char:nth-child(22) {
-  -webkit-animation-delay: 2.2s;
-  animation-delay: 2.2s;
-}
-.animate-heading.inview .char:nth-child(23) {
-  -webkit-animation-delay: 2.3s;
-  animation-delay: 2.3s;
-}
-.animate-heading.inview .char:nth-child(24) {
-  -webkit-animation-delay: 2.4s;
-  animation-delay: 2.4s;
-}
-.animate-heading.inview .char:nth-child(25) {
-  -webkit-animation-delay: 2.5s;
-  animation-delay: 2.5s;
-}
-.animate-heading.inview .char:nth-child(26) {
-  -webkit-animation-delay: 2.6s;
-  animation-delay: 2.6s;
-}
-.animate-heading.inview .char:nth-child(27) {
-  -webkit-animation-delay: 2.7s;
-  animation-delay: 2.7s;
-}
-.animate-heading.inview .char:nth-child(28) {
-  -webkit-animation-delay: 2.8s;
-  animation-delay: 2.8s;
-}
-.animate-heading.inview .char:nth-child(29) {
-  -webkit-animation-delay: 2.9s;
-  animation-delay: 2.9s;
-}
-.animate-heading.inview .char:nth-child(30) {
-  -webkit-animation-delay: 3s;
-  animation-delay: 3s;
-}
-
 @-webkit-keyframes kf-img-show {
   0% {
     opacity: 0;
@@ -847,7 +569,6 @@ figure {
     opacity: 1;
   }
 }
-
 @keyframes kf-img-show {
   0% {
     opacity: 0;
@@ -884,30 +605,596 @@ figure {
     transform: translate(0);
   }
 }
-@-webkit-keyframes kf-animate-slide {
+@-webkit-keyframes sliderPagination {
   0% {
-    opacity: 0;
-    -webkit-transform: translateX(10%);
-    transform: translateX(10%);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
-@keyframes kf-animate-slide {
+@keyframes sliderPagination {
   0% {
-    opacity: 0;
-    -webkit-transform: translateX(10%);
-    transform: translateX(10%);
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
   }
   100% {
     opacity: 1;
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
   }
 }
+@-webkit-keyframes scrollPc {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+  }
+}
+@keyframes scrollPc {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(80px);
+    transform: translateY(80px);
+  }
+}
+.js-scroll--fadeUp {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+  transform: translateY(40px);
+  -webkit-transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s, -webkit-transform 0.6s;
+}
+.js-scroll--fadeUp.is-anim {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--fadeDown {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translateY(-40px);
+  transform: translateY(-40px);
+  -webkit-transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s, -webkit-transform 0.6s;
+}
+.js-scroll--fadeDown.is-anim {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--fadeLeft {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translateX(40px);
+  transform: translateX(40px);
+  -webkit-transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s, -webkit-transform 0.6s;
+}
+.js-scroll--fadeLeft.is-anim {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--fadeRight {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transform: translateX(-40px);
+  transform: translateX(-40px);
+  -webkit-transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, -webkit-transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s;
+  transition: opacity 1.2s, transform 0.6s, -webkit-transform 0.6s;
+}
+.js-scroll--fadeRight.is-anim {
+  opacity: 1;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--slideUp {
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.js-scroll--slideUp.is-anim {
+  opacity: 1;
+  overflow: visible;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--slideDown {
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.js-scroll--slideDown.is-anim {
+  opacity: 1;
+  overflow: visible;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--slideLeft {
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.js-scroll--slideLeft.is-anim {
+  opacity: 1;
+  overflow: visible;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--slideRight {
+  opacity: 0;
+  overflow: hidden;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, -webkit-transform 1s;
+  transition: opacity 2s, transform 1s;
+  transition: opacity 2s, transform 1s, -webkit-transform 1s;
+  -webkit-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+.js-scroll--slideRight.is-anim {
+  opacity: 1;
+  overflow: visible;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+}
+
+.js-scroll--coverUp {
+  overflow: hidden;
+}
+.js-scroll--coverUp::before, .js-scroll--coverUp::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+  transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+}
+.js-scroll--coverUp::before {
+  background: #191919;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: 10;
+}
+.js-scroll--coverUp::after {
+  background: #191e27;
+  z-index: 11;
+}
+.js-scroll--coverUp.is-anim::before, .js-scroll--coverUp.is-anim::after {
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+.js-scroll--coverDown {
+  overflow: hidden;
+}
+.js-scroll--coverDown::before, .js-scroll--coverDown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+  transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+}
+.js-scroll--coverDown::before {
+  background: #191919;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: 10;
+}
+.js-scroll--coverDown::after {
+  background: #191e27;
+  z-index: 11;
+}
+.js-scroll--coverDown.is-anim::before, .js-scroll--coverDown.is-anim::after {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+
+.js-scroll--coverLeft {
+  overflow: hidden;
+}
+.js-scroll--coverLeft::before, .js-scroll--coverLeft::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+  transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+}
+.js-scroll--coverLeft::before {
+  background: #191919;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: 10;
+}
+.js-scroll--coverLeft::after {
+  background: #191e27;
+  z-index: 11;
+}
+.js-scroll--coverLeft.is-anim::before, .js-scroll--coverLeft.is-anim::after {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.js-scroll--coverRight {
+  overflow: hidden;
+}
+.js-scroll--coverRight::before, .js-scroll--coverRight::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+  transition: all cubic-bezier(0.33, 1, 0.68, 1) 0.6s 0.3s;
+}
+.js-scroll--coverRight::before {
+  background: #191919;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  z-index: 10;
+}
+.js-scroll--coverRight::after {
+  background: #191e27;
+  z-index: 11;
+}
+.js-scroll--coverRight.is-anim::before, .js-scroll--coverRight.is-anim::after {
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+}
+
+.js-scroll--rotate {
+  opacity: 0;
+}
+.js-scroll--rotate.is-anim {
+  opacity: 1;
+  -webkit-animation-name: kf-img-rotate;
+  animation-name: kf-img-rotate;
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.js-scroll--rotate-delay {
+  opacity: 0;
+}
+.js-scroll--rotate-delay.is-anim {
+  opacity: 1;
+  -webkit-animation-name: kf-img-rotate;
+  animation-name: kf-img-rotate;
+  -webkit-animation-duration: 1.2s;
+  animation-duration: 1.2s;
+  -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.js-scroll--rotate-delay.is-anim:nth-child(9) {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.js-scroll--turn {
+  -webkit-clip-path: polygon(0 100%, 0 100%, 0 100%);
+  clip-path: polygon(0 100%, 0 100%, 0 100%);
+  transition: clip-path 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), -webkit-clip-path 1s cubic-bezier(0.6, 0.8, 0.8, 1.2);
+}
+.js-scroll--turn.is-anim {
+  -webkit-clip-path: polygon(0 -100%, 0 100%, 200% 100%);
+  clip-path: polygon(0 -100%, 0 100%, 200% 100%);
+}
+
+.js-scroll--scale {
+  opacity: 0;
+  -webkit-transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 1.4s cubic-bezier(0.61, 1, 0.88, 1), transform 1.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 1.4s cubic-bezier(0.61, 1, 0.88, 1);
+}
+.js-scroll--scale.is-anim {
+  opacity: 1;
+  -webkit-animation-name: kf-img-show;
+  animation-name: kf-img-show;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1);
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.js-scroll--scale-delay {
+  opacity: 0;
+}
+.js-scroll--scale-delay.is-anim {
+  opacity: 1;
+  -webkit-animation-name: kf-img-show;
+  animation-name: kf-img-show;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.js-scroll--scale-delay.is-anim:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(3) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(4) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(5) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(6) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(7) {
+  -webkit-animation-delay: 0.7s;
+  animation-delay: 0.7s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(8) {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+.js-scroll--scale-delay.is-anim:nth-child(9) {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+
+.animate-heading {
+  opacity: 0;
+}
+.animate-heading.inview {
+  opacity: 1;
+}
+.animate-heading.inview .char {
+  display: inline-block;
+}
+.animate-heading .char {
+  opacity: 0;
+}
+
+.animate-heading.inview .char {
+  -webkit-animation-name: kf-animate-chars;
+  animation-name: kf-animate-chars;
+  -webkit-animation-duration: 0.65s;
+  animation-duration: 0.65s;
+  -webkit-animation-timing-function: ease;
+  animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.animate-heading.inview .char:nth-child(1) {
+  -webkit-animation-delay: 0.06s;
+  animation-delay: 0.06s;
+}
+.animate-heading.inview .char:nth-child(2) {
+  -webkit-animation-delay: 0.12s;
+  animation-delay: 0.12s;
+}
+.animate-heading.inview .char:nth-child(3) {
+  -webkit-animation-delay: 0.18s;
+  animation-delay: 0.18s;
+}
+.animate-heading.inview .char:nth-child(4) {
+  -webkit-animation-delay: 0.24s;
+  animation-delay: 0.24s;
+}
+.animate-heading.inview .char:nth-child(5) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.animate-heading.inview .char:nth-child(6) {
+  -webkit-animation-delay: 0.36s;
+  animation-delay: 0.36s;
+}
+.animate-heading.inview .char:nth-child(7) {
+  -webkit-animation-delay: 0.42s;
+  animation-delay: 0.42s;
+}
+.animate-heading.inview .char:nth-child(8) {
+  -webkit-animation-delay: 0.48s;
+  animation-delay: 0.48s;
+}
+.animate-heading.inview .char:nth-child(9) {
+  -webkit-animation-delay: 0.54s;
+  animation-delay: 0.54s;
+}
+.animate-heading.inview .char:nth-child(10) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+.animate-heading.inview .char:nth-child(11) {
+  -webkit-animation-delay: 0.66s;
+  animation-delay: 0.66s;
+}
+.animate-heading.inview .char:nth-child(12) {
+  -webkit-animation-delay: 0.72s;
+  animation-delay: 0.72s;
+}
+.animate-heading.inview .char:nth-child(13) {
+  -webkit-animation-delay: 0.78s;
+  animation-delay: 0.78s;
+}
+.animate-heading.inview .char:nth-child(14) {
+  -webkit-animation-delay: 0.84s;
+  animation-delay: 0.84s;
+}
+.animate-heading.inview .char:nth-child(15) {
+  -webkit-animation-delay: 0.9s;
+  animation-delay: 0.9s;
+}
+.animate-heading.inview .char:nth-child(16) {
+  -webkit-animation-delay: 0.96s;
+  animation-delay: 0.96s;
+}
+.animate-heading.inview .char:nth-child(17) {
+  -webkit-animation-delay: 1.02s;
+  animation-delay: 1.02s;
+}
+.animate-heading.inview .char:nth-child(18) {
+  -webkit-animation-delay: 1.08s;
+  animation-delay: 1.08s;
+}
+.animate-heading.inview .char:nth-child(19) {
+  -webkit-animation-delay: 1.14s;
+  animation-delay: 1.14s;
+}
+.animate-heading.inview .char:nth-child(20) {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
 .toc {
   position: sticky;
   top: 0;
