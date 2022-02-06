@@ -8,15 +8,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var $body = $("body");
 $(document).ready(function () {
-  $("a[href*='http://']:not([href*='" + location.hostname + "']),[href*='https://']:not([href*='" + location.hostname + "'])").attr('target', '_blank').addClass('blank');
-  $('a[href^="#"]').on('click', function () {
-    var href = $(this).attr('href');
-    var position = $(href).offset().top;
-    $('html, body').animate({
-      'scrollTop': position
-    }, 500);
-    return false;
+  $('.js-draw--trigger').on('click', function () {
+    $('.js-draw--trigger').toggleClass('is-active');
+    $('.js-draw--content').toggleClass('is-active');
+    $('.js-draw--bg').toggleClass('is-active');
+    $('body').toggleClass('lock');
   });
+  $("a[href*='http://']:not([href*='" + location.hostname + "']),[href*='https://']:not([href*='" + location.hostname + "'])").attr('target', '_blank').addClass('blank');
   $('.gallery-mons').isotope({
     itemSelector: '.js-filter-items',
     masonry: {
@@ -56,12 +54,27 @@ $(document).ready(function () {
       filter: filterValue
     });
   });
-  $(function () {
-    $('.p-skill__slideWrap div .p-skill__txt').matchHeight();
-    $('.blog__list .blog__item .blog__body').matchHeight();
-  });
+  $('section .index__inner .index__foot').matchHeight();
+  $('.p-about__list--content .p-about__item--content').matchHeight();
 });
 document.addEventListener('DOMContentLoaded', function () {
+  {
+    var tabTriggers = document.querySelectorAll('.js-tab--trigger');
+    var tabContents = document.querySelectorAll('.js-tab--content');
+    tabTriggers.forEach(function (trigger) {
+      return trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        tabTriggers.forEach(function (trigger) {
+          trigger.classList.remove('is-active');
+        });
+        trigger.classList.add('is-active');
+        tabContents.forEach(function (content) {
+          return content.classList.remove('is-active');
+        });
+        document.getElementById(trigger.dataset.tab).classList.add('is-active');
+      });
+    });
+  }
   {
     var el = document.querySelectorAll('.inview');
     var els = Array.prototype.slice.call(el);
@@ -83,38 +96,34 @@ document.addEventListener('DOMContentLoaded', function () {
     els.forEach(function (el) {
       return io.observe(el);
     });
-  }
-  {
-    var callback = function callback(entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          header.classList.add('is-active');
-        } else {
-          header.classList.remove('is-active');
-        }
-      });
-    };
+  } // {
+  //   const el = document.querySelectorAll('.js-first-view');
+  //   const els = Array.prototype.slice.call(el);
+  //   const header = document.getElementById('js-header');
+  //   const options = {
+  //     root: null,
+  //     rootMargin: '-50% 0px',
+  //     threshold: 0
+  //   };
+  //   const observer = new IntersectionObserver(callback, options);
+  //   els.forEach((el) => {
+  //     observer.observe(el);
+  //   });
+  //   function callback(entries) {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         header.classList.add('is-active');
+  //       } else {
+  //         header.classList.remove('is-active');
+  //       }
+  //     });
+  //   }
+  // }
 
-    var _el = document.querySelectorAll('.js-first-view');
+  {
+    var _el = document.querySelectorAll('.animate-heading');
 
     var _els = Array.prototype.slice.call(_el);
-
-    var header = document.getElementById('js-header');
-    var _options = {
-      root: null,
-      rootMargin: '-50% 0px',
-      threshold: 0
-    };
-    var observer = new IntersectionObserver(callback, _options);
-
-    _els.forEach(function (el) {
-      observer.observe(el);
-    });
-  }
-  {
-    var _el2 = document.querySelectorAll('.animate-heading');
-
-    var _els2 = Array.prototype.slice.call(_el2);
 
     var _cb = function _cb(entries, observer) {
       entries.forEach(function (entry) {
@@ -126,26 +135,26 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     };
 
-    var _options2 = {
+    var _options = {
       root: null
     };
 
-    var _io = new IntersectionObserver(_cb, _options2);
+    var _io = new IntersectionObserver(_cb, _options);
 
-    _els2.forEach(function (el) {
+    _els.forEach(function (el) {
       return _io.observe(el);
     });
 
-    var _iterator = _createForOfIteratorHelper(_els2),
+    var _iterator = _createForOfIteratorHelper(_els),
         _step;
 
     try {
       for (_iterator.s(); !(_step = _iterator.n()).done;) {
-        var _el3 = _step.value;
+        var _el2 = _step.value;
 
-        var chars = _el3.innerHTML.trim().split("");
+        var chars = _el2.innerHTML.trim().split("");
 
-        _el3.innerHTML = chars.reduce(function (acc, curr) {
+        _el2.innerHTML = chars.reduce(function (acc, curr) {
           curr = curr.replace(/\s+/, '&nbsp;');
           return "".concat(acc, "<span class=\"char\">").concat(curr, "</span>");
         }, "");

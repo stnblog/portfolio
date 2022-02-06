@@ -1,0 +1,126 @@
+<% let pageId = 'gallery'; %>
+<% let filePath = jsonData.pages[pageId].filePath %>
+<%- include('./../_inc/_header', { pageId: pageId }) %>
+
+<!-- <h1><%= 'Hello, EJS'%></h1> -->
+
+
+
+<div class="c-heading inview">
+  <h1 class="c-heading__main inview js-scroll--fadeUp">
+    <span class="-en">PORTFOLIO</span>
+    <span class="-ja">制作物一覧</span>
+  </h1>
+</div>
+
+<main class="js-first-view l-main">
+  <section class="work">
+    <div class="work__inner">
+      <div class="container">
+
+
+        <div class="js-filtering c-filter">
+
+          <p class="c-filter__heading">CATEGORY</p>
+
+          <ul class="filter c-filter__list text-right">
+            <li class="c-filter__item--tab is-active" data-filter='*'>
+              <span>All</span>
+            </li>
+            <li class="c-filter__item--tab" data-filter='.website'>
+              <span>web site</span>
+            </li>
+            <li class="c-filter__item--tab" data-filter='.webapp'>
+              <span>web app</span>
+            </li>
+            <li class="c-filter__item--tab" data-filter='.illust'>
+              <span>Illustrator</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- <div class="u-dp-sp c-filter c-filter--select">
+          <select class="filters-select c-filter__list--select">
+            <option value="*">show all</option>
+            <option value=".website">website</option>
+            <option value=".webapp">webapp</option>
+            <option value=".illust">illust</option>
+          </select>
+        </div> -->
+
+
+        <ul class="row js-gallery work__list">
+          <li class="work__item col-4__sm col-3__md js-filter-items website">
+            <div class="work__meta">
+              <p class="-tag">web site</p>
+              <p class="-date">2021.11</p>
+            </div>
+
+            <figure class="work__img">
+              <a href="/work/detail">
+                <img src="/assets/images/portfolio/pf_01.png" alt="">
+              </a>
+            </figure>
+            <h2 class="work__heading--item">simokita camp</h2>
+          </li>
+          <li class="work__item col-4__sm col-3__md js-filter-items webapp">
+            <div class="work__meta">
+              <p class="-tag">web app</p>
+              <p class="-date">2021.11</p>
+            </div>
+
+            <figure class="work__img">
+              <a href="/work/detail">
+                <img src="/assets/images/portfolio/pf_01.png" alt="">
+              </a>
+            </figure>
+            <h2 class="work__heading--item">家計簿</h2>
+          </li>
+          <li class="work__item col-4__sm col-3__md js-filter-items illust">
+            <div class="work__meta">
+              <p class="-tag">Illustrator</p>
+              <p class="-date">2021.11</p>
+            </div>
+            <figure class="work__img">
+              <a href="/work/detail">
+                <img src="/assets/images/portfolio/pf_01.png" alt="">
+              </a>
+            </figure>
+            <h2 class="work__heading--item">simokita camp</h2>
+          </li>
+          <li class="work__item col-4__sm col-3__md js-filter-items illust">
+            <div class="work__meta">
+              <p class="-tag">Illustrator</p>
+              <p class="-date">2021.11</p>
+            </div>
+            <figure class="work__img">
+              <a href="/work/detail">
+                <img src="/assets/images/portfolio/pf_01.png" alt="">
+              </a>
+              <!-- <figcaption class="work__cap">
+                <a href="/work/detail">
+                  VIEW MORE
+                </a>
+              </figcaption> -->
+            </figure>
+            <h2 class="work__heading--item">simokita camp</h2>
+          </li>
+        </ul>
+
+        <nav class="c-pagination">
+          <ul>
+            <li>c-pagination</li>
+          </ul>
+        </nav>
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+</main>
+
+<%- include('./../_inc/_footer', { pageId: pageId }) %>

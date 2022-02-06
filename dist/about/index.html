@@ -14,8 +14,9 @@
   <meta name="description" content="説明文">
 
   <link rel="icon" href="../assets/images/icon/favicon-32x32.png" sizes="32x32">
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="../assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
@@ -29,8 +30,8 @@
 
 
   <header id="js-header" class="l-header">
-    <div class="l-header__wrap">
-      <div class="l-header__row">
+    <div class="l-header__inner">
+      <div class="l-header__column">
         <p class="l-header__logo">
           <a href="/">tnblog</a>
         </p>
@@ -72,11 +73,13 @@
     </div>
   </header>
 
-  <button class="l-drawer__trigger js-draw__trigger">
+  <button class="l-drawer__trigger js-draw--trigger">
     <span class="-line"></span>
   </button>
 
-  <nav class="l-drawer__content js-draw__content">
+  <div class="l-drawer__bg js-draw--bg">&nbsp;</div>
+
+  <nav class="l-drawer__content js-draw--content">
     <div class="l-drawer__wrap">
       <ul class="l-drawer__list l-drawer__list--menu">
         <li class="l-drawer__item">
@@ -88,13 +91,13 @@
         <li class="l-drawer__item">
           <a href="/about">
             <span class="-en">about</span>
-            <span class="-ja">下北キャンプ場</span>
+            <span class="-ja">私について</span>
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/hotel">
-            <span class="-en">hotel</span>
-            <span class="-ja">宿泊施設一覧</span>
+          <a href="/work">
+            <span class="-en">work</span>
+            <span class="-ja">制作物一覧</span>
           </a>
         </li>
         <li class="l-drawer__item">
@@ -104,19 +107,13 @@
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/shop">
-            <span class="-en">SHOP</span>
-            <span class="-ja">レンタルショップ</span>
+          <a href="/blog">
+            <span class="-en">BLOG</span>
+            <span class="-ja">ブログ</span>
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/faq">
-            <span class="-en">FAQ</span>
-            <span class="-ja">よくある質問</span>
-          </a>
-        </li>
-        <li class="l-drawer__item">
-          <a href="#">
+          <a href="/">
             <span class="-en">CONTACT</span>
             <span class="-ja">お問い合わせ</span>
           </a>
@@ -126,76 +123,74 @@
   </nav>
 
 
-<!-- <h1>Hello, EJS</h1> -->
-
-
-<!-- <div class="c-heading inview">
-  <h1 class="c-heading__main inview js-scroll__fadeIn--up">
-    <span class="-en">ABOUT</span>
-    <span class="-ja">私について</span>
-  </h1>
-</div> -->
-
-
 <main class="js-first-view l-main">
 
   <div class="c-heading inview">
     <h1 class="c-heading__main inview js-scroll--fadeUp">
-      <span class="-en">WORK</span>
-      <span class="-ja">制作物一覧</span>
+      <span class="-en">ABOUT</span>
+      <span class="-ja">私について</span>
     </h1>
   </div>
 
 
 
-  <section id="index-work">
-    <div class="index__inner index__inner--work inview">
+  <section class="p-about">
+
+    <div class="p-about__inner">
 
 
 
-      <div class="container index__wrap--about mb-16">
+      <div class="container p-about__wrap">
         <div class="row items-center justify-center">
 
-          <div class="index__head--about u-dp-pc">
-            <figure class="c-picture__img index__img--about inview">
+          <div class="p-about__head u-dp-pc">
+            <figure class="c-picture__img p-about__img inview">
               <picture class="c-picture__img--inner">
-                <img src="/assets/images/profile_01.png" alt="about_01" loading="lazy">
+                <img src="/assets/images/profile_01.png" alt="about_01">
               </picture>
             </figure>
           </div>
 
-          <div class="index__body--about">
-            <div class="index__body--aboutInner">
+          <div class="p-about__body">
 
-              <h2 class="index__heading--about">
-                <span class="-en animate-heading">わたしについて</span>
-                <span class="-ja animate-heading">S.TANABE</span>
-              </h2>
-              <div class="inview js-scroll--fadeUp">
+            <h2 class="p-about__heading">
+              <span class="-en animate-heading">わたしについて</span>
+              <span class="-ja animate-heading">S.TANABE</span>
+            </h2>
+            <div class="inview js-scroll--fadeUp">
 
-                <div class="u-dp-sp">
-                  <figure class="c-picture__img index__img--about inview">
-                    <picture class="c-picture__img--inner">
-                      <img src="/assets/images/profile_01.png" alt="about_02" loading="lazy">
-                    </picture>
-                  </figure>
-                </div>
+              <div class="u-dp-sp">
+                <figure class="c-picture__img p-about__img inview">
+                  <picture class="c-picture__img--inner">
+                    <img src="/assets/images/profile_01.png" alt="about_02">
+                  </picture>
+                </figure>
+              </div>
 
 
-                <div class="index__txt--about">
-                  <!-- <p class="-name"><strong>NAME：S.TANABE</strong></p> -->
-                  <p class="-intro">
-                    aNCHORは「港」です。私たちと同じ夢を持つ人々が、個人・会社、大小を問わず集まり、「アンカー」を下ろして共にプロジェクトを遂行する。プロジェクトが終わると旅立ち、どこかで経験を積んでいつの日かまた集まり、より大きなプロジェクトを進める―。これがaNCHORの思い描く仕事の姿であり、クリエイティヴに力を注ぐ方が夢を実現するための係留所でありたいと考えています。
-                  </p>
-                  <p class="text-right">
-                    <a class="c-button c-button--border" href="/about">read more</a>
-                  </p>
-                </div>
+              <div class="p-about__txt">
+                <!-- <p class="-name"><strong>NAME：S.TANABE</strong></p> -->
+                <p class="-intro">
+                  28歳、フリーター、前職はWEB制作会社でアルバイトをしていました。<br />
+                  27歳で人より優れた点がまったくないことに気づき、窮鼠猫を噛む思いで勉強中、毎日焦燥感が凄いです。<br />
+                  現在の目標はfigma、Reactを使用してスマホアプリを作成することです。そのために現在JavaScriptについて学習中。<br />
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+    </div><!-- p-about__inner -->
+
+
+  </section><!-- p-about -->
+
+
+  <section class="p-skill">
+
+    <div class="p-skill__inner">
+
 
       <h2 class="index__heading inview">
         <span class="-en animate-heading">SKILL</span>
@@ -203,78 +198,71 @@
       </h2>
 
 
+      <div class="inview js-scroll--slideLeft">
 
-      <div class="swiper-container inview js-scroll--slide index__slider js-index-slider">
-        <!-- <p class="index__txt">
-          画像をクリックで詳細ページへ遷移します。もしよろしければご覧ください。<br />
-          作品についてご指摘等あればメール、又はコンタクトフォームからご連絡お願いします。
-        </p> -->
-
-        <!-- <p class="index__txt text-left">
-          デザイン力を上げたり、引き出しを増やす目的のサイトレビューが主なブログコンテンツです。<br />
-        </p> -->
+        <div class="swiper-container c-slider js-index-slider">
 
 
-        <div class="swiper-wrapper index__slideWrap">
-          <div class="swiper-slide index__slide">
-            <figure class="c-picture__img p-skill__img">
-              <picture class="c-picture__img--inner">
-                <img src="/assets/images/skill/html.png" alt="">
-              </picture>
-            </figure>
-            <p class="p-skill__txt">
-              photoshop、figmaのデザインカンプからレスポンシブコーディングを行った経験があります。開発環境はSass, Ejs, Gulp, GITを使用しています。
-            </p>
-          </div>
-          <div class="swiper-slide index__slide">
-            <figure class="c-picture__img p-skill__img">
-              <picture class="c-picture__img--inner">
-                <img src="/assets/images/skill/js.png" alt="">
-              </picture>
-            </figure>
-            <p class="p-skill__txt">
-              ウェブサイトの動的パーツやスクロールアニメーションの実装が可能です。matchheight, Swiper, fancybox等のプラグインをよく使用します。
-            </p>
-          </div>
-          <div class="swiper-slide index__slide">
-            <figure class="c-picture__img p-skill__img">
-              <picture class="c-picture__img--inner">
-                <img src="/assets/images/skill/wp.png" alt="">
-              </picture>
-            </figure>
-            <p class="p-skill__txt">
-              WordPressのオリジナルテーマが作成ができます。既存サイトのCMS化や、テーマを利用した制作も可能です。
-            </p>
-          </div>
-          <div class="swiper-slide index__slide">
-            <figure class="c-picture__img p-skill__img">
-              <picture class="c-picture__img--inner">
-                <img src="/assets/images/skill/ps.png" alt="">
-              </picture>
-            </figure>
-            </p>
-            <p class="p-skill__txt">
-              デザインカンプからCSSの取得や画像の書き出し、リサイズといった基本操作ができます。
-              また画像の切抜きや合成、色味調整が可能です。
-            </p>
-          </div>
-          <div class="swiper-slide index__slide">
-            <figure class="c-picture__img p-skill__img">
-              <picture class="c-picture__img--inner">
-                <img src="/assets/images/skill/tool.png" alt="">
-              </picture>
-            </figure>
-            <p class="p-skill__txt">
-              jquery、ES6によるDOM操作、IntersectionObserverやjquery.inviewを使用したスクロールアニメーションの実装が可能です。
-            </p>
+
+          <div class="swiper-wrapper c-slider__wrap">
+            <div class="swiper-slide c-slider__slide">
+              <figure class="c-picture__img p-skill__img">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/skill/html.png" alt="skill_01">
+                </picture>
+              </figure>
+              <p class="p-skill__txt">
+                photoshop、figmaのデザインカンプからレスポンシブコーディングを行った経験があります。開発環境はSass, Ejs, Gulp, GITを使用しています。
+              </p>
+            </div>
+            <div class="swiper-slide c-slider__slide">
+              <figure class="c-picture__img p-skill__img">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/skill/js.png" alt="skill_02">
+                </picture>
+              </figure>
+              <p class="p-skill__txt">
+                ウェブサイトの動的パーツやスクロールアニメーションの実装が可能です。matchheight, Swiper, fancybox等のプラグインをよく使用します。
+              </p>
+            </div>
+            <div class="swiper-slide c-slider__slide">
+              <figure class="c-picture__img p-skill__img">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/skill/wp.png" alt="">
+                </picture>
+              </figure>
+              <p class="p-skill__txt">
+                WordPressのオリジナルテーマが作成ができます。既存サイトのCMS化や、テーマを利用した制作も可能です。
+              </p>
+            </div>
+            <div class="swiper-slide c-slider__slide">
+              <figure class="c-picture__img p-skill__img">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/skill/ps.png" alt="skill_03">
+                </picture>
+              </figure>
+              </p>
+              <p class="p-skill__txt">
+                デザインカンプからCSSの取得や画像の書き出し、リサイズといった基本操作ができます。
+                また画像の切抜きや合成、色味調整が可能です。
+              </p>
+            </div>
+            <div class="swiper-slide c-slider__slide">
+              <figure class="c-picture__img p-skill__img">
+                <picture class="c-picture__img--inner">
+                  <img src="/assets/images/skill/tool.png" alt="skill_04">
+                </picture>
+              </figure>
+              <p class="p-skill__txt">
+                jquery、ES6によるDOM操作、IntersectionObserverやjquery.inviewを使用したスクロールアニメーションの実装が可能です。
+              </p>
+            </div>
           </div>
         </div>
-
       </div>
 
-
       <div class="container index__foot">
-        <div class="row justify-end">
+        <div class="row justify-center">
 
           <div class="col-6__sm index__column--slidebtn">
             <div class="swiper-button-prev index__btn--slider index__btn--sliderPrev js-slider-btnPrev"></div>
@@ -283,8 +271,15 @@
         </div>
 
       </div>
+
+
+
     </div>
+
   </section>
+
+
+
 
 </main>
 

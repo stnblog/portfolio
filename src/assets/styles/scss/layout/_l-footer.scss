@@ -1,7 +1,8 @@
 .l-footer {
   margin: 140px 0 0;
-  border-top: $line;
-  padding: 100px 0 80px;
+  border-top: $border-light-1;
+  padding: 60px 0 40px;
+  background: $color-bg;
 
   &__logo {
     font-size: 1.2rem;

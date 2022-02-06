@@ -14,8 +14,9 @@
   <meta name="description" content="説明文">
 
   <link rel="icon" href="./assets/images/icon/favicon-32x32.png" sizes="32x32">
-  <link rel="dns-prefetch" href="//fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">
   <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link href="./assets/styles/vendors/swiper-bundle.min.css" rel="stylesheet">
@@ -29,8 +30,8 @@
 
 
   <header id="js-header" class="l-header">
-    <div class="l-header__wrap">
-      <div class="l-header__row">
+    <div class="l-header__inner">
+      <div class="l-header__column">
         <p class="l-header__logo">
           <a href="/">tnblog</a>
         </p>
@@ -72,11 +73,13 @@
     </div>
   </header>
 
-  <button class="l-drawer__trigger js-draw__trigger">
+  <button class="l-drawer__trigger js-draw--trigger">
     <span class="-line"></span>
   </button>
 
-  <nav class="l-drawer__content js-draw__content">
+  <div class="l-drawer__bg js-draw--bg">&nbsp;</div>
+
+  <nav class="l-drawer__content js-draw--content">
     <div class="l-drawer__wrap">
       <ul class="l-drawer__list l-drawer__list--menu">
         <li class="l-drawer__item">
@@ -88,13 +91,13 @@
         <li class="l-drawer__item">
           <a href="/about">
             <span class="-en">about</span>
-            <span class="-ja">下北キャンプ場</span>
+            <span class="-ja">私について</span>
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/hotel">
-            <span class="-en">hotel</span>
-            <span class="-ja">宿泊施設一覧</span>
+          <a href="/work">
+            <span class="-en">work</span>
+            <span class="-ja">制作物一覧</span>
           </a>
         </li>
         <li class="l-drawer__item">
@@ -104,19 +107,13 @@
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/shop">
-            <span class="-en">SHOP</span>
-            <span class="-ja">レンタルショップ</span>
+          <a href="/blog">
+            <span class="-en">BLOG</span>
+            <span class="-ja">ブログ</span>
           </a>
         </li>
         <li class="l-drawer__item">
-          <a href="/faq">
-            <span class="-en">FAQ</span>
-            <span class="-ja">よくある質問</span>
-          </a>
-        </li>
-        <li class="l-drawer__item">
-          <a href="#">
+          <a href="/">
             <span class="-en">CONTACT</span>
             <span class="-ja">お問い合わせ</span>
           </a>
@@ -129,21 +126,21 @@
 <!-- <h1>Hello, EJS</h1> -->
 
 
-<div class="l-hero">
+<!-- <div class="l-hero">
   <div class="l-hero__wrap inview">
     <div class="l-hero__bg c-mask" style="background-image: url(./assets/images/hero_01.jpg);"></div>
     <h1 class="l-hero__heading">
-      <span class="-en animate-heading">
+      <span class="-en">
         wellcome
       </span>
-      <span class="-en animate-heading mt-8">
+      <span class="-en mt-8">
         PORTFOLIO
       </span>
     </h1>
   </div>
 
 
-</div>
+</div> -->
 
 
 
@@ -154,51 +151,42 @@
 
   <main class="l-main">
 
-    <section id="index-about" class="">
+    <section id="index-about">
       <div class="index__inner index__inner--about">
-
-
-
-
-        <div class="container index__wrap--about">
+        <div class="container p-about__wrap">
           <div class="row justify-center items-center">
 
-            <div class="index__head--about u-dp-pc">
-              <figure class="c-picture__img index__img--about inview">
+            <div class="p-about__head u-dp-pc">
+              <figure class="c-picture__img p-about__img inview">
                 <picture class="c-picture__img--inner">
-                  <img src="./assets/images/profile_01.png" alt="about_01" loading="lazy">
+                  <img src="./assets/images/profile_01.png" alt="about_01">
                 </picture>
               </figure>
             </div>
 
-            <div class="index__body--about">
-              <div class="index__body--aboutInner">
+            <div class="p-about__body">
+              <h2 class="p-about__heading">
+                <span class="-en animate-heading">わたしについて</span>
+                <span class="-ja animate-heading">INTRODUCTION</span>
+              </h2>
+              <div class="inview js-scroll--fadeUp">
 
-                <h2 class="index__heading--about">
-                  <span class="-en animate-heading">わたしについて</span>
-                  <span class="-ja animate-heading">INTRODUCTION</span>
-                </h2>
-                <div class="inview js-scroll--fadeUp">
-
-                  <div class="u-dp-sp">
-                    <figure class="c-picture__img index__img--about inview">
-                      <picture class="c-picture__img--inner">
-                        <img src="./assets/images/profile_01.png" alt="about_02" loading="lazy">
-                      </picture>
-                    </figure>
-                  </div>
-
-
-                  <div class="index__txt--about">
-                    <!-- <p class="-name"><strong>NAME：S.TANABE</strong></p> -->
-                    <p class="-intro">
-                      aNCHORは「港」です。私たちと同じ夢を持つ人々が、個人・会社、大小を問わず集まり、「アンカー」を下ろして共にプロジェクトを遂行する。プロジェクトが終わると旅立ち、どこかで経験を積んでいつの日かまた集まり、より大きなプロジェクトを進める―。これがaNCHORの思い描く仕事の姿であり、クリエイティヴに力を注ぐ方が夢を実現するための係留所でありたいと考えています。
-
-                    </p>
-                    <p class="text-right">
-                      <a class="c-button c-button--border" href="/about">read more</a>
-                    </p>
-                  </div>
+                <div class="u-dp-sp">
+                  <figure class="c-picture__img p-about__img inview">
+                    <picture class="c-picture__img--inner">
+                      <img src="./assets/images/profile_01.png" alt="about_02">
+                    </picture>
+                  </figure>
+                </div>
+                <div class="p-about__txt">
+                  <p class="-intro">
+                    ようこそ私のポートフォリオへ<br />
+                    趣味でウェブサイト・ウェブアプリケーションの開発・学習を行っています。
+                    これから頻繁に学習成果をアウトプットしていきます。よろしくお願いします。
+                  </p>
+                  <p class="p-about__btn">
+                    <a class="c-button c-button--border" href="/about">read more</a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -209,16 +197,17 @@
     </section>
 
     <section id="index-work">
-      <div class="index__inner index__inner--work inview">
+      <div class="index__inner">
 
         <h2 class="index__heading inview">
-          <span class="-en animate-heading">portfolio</span>
-          <span class="-ja animate-heading">制作物一覧</span>
+          <span class="-en">portfolio</span>
+          <span class="-ja">制作物一覧</span>
         </h2>
 
 
-
         <div class="inview js-scroll--slideLeft">
+
+
 
           <div class="swiper-container c-slider index__slider js-index-slider">
             <div class="swiper-wrapper c-slider__wrap index__slideWrap">
@@ -226,64 +215,7 @@
                 <a href="/work/detail" class="inview">
                   <figure class="c-picture__img index__img">
                     <picture class="c-picture__img--inner">
-                      <img src="./assets/images/thumb/pf_01.jpg" alt="" style="object-position: top;">
-                    </picture>
-                  </figure>
-                </a>
-                <h3 class="index__heading--article">
-                  マッチングアプリLP
-                </h3>
-
-                <div class="index__meta--work">
-                  <p class="-tag">
-                    ランディングページ
-                  </p>
-                  <p class="-date">2021.11.01</p>
-                </div>
-              </div>
-              <div class="swiper-slide c-slider__slide index__slide">
-                <a href="/work/detail" class="inview">
-                  <figure class="c-picture__img index__img">
-                    <picture class="c-picture__img--inner">
-                      <img src="./assets/images/thumb/pf_02.jpg" alt="" style="object-position: top;">
-                    </picture>
-                  </figure>
-                </a>
-                <h3 class="index__heading--article">
-                  マッチングアプリLP
-                </h3>
-
-                <div class="index__meta--work">
-                  <p class="-tag">
-                    ランディングページ
-                  </p>
-                  <p class="-date">2021.11.01</p>
-                </div>
-              </div>
-              <div class="swiper-slide c-slider__slide index__slide">
-                <a href="/blog/detail" class="inview">
-                  <figure class="c-picture__img index__img">
-                    <picture class="c-picture__img--inner">
-                      <img src="./assets/images/thumb/pf_01.jpg" alt="" style="object-position: top;">
-                    </picture>
-                  </figure>
-                </a>
-                <h3 class="index__heading--article">
-                  マッチングアプリLP
-                </h3>
-
-                <div class="index__meta--work">
-                  <p class="-tag">
-                    ランディングページ
-                  </p>
-                  <p class="-date">2021.11.01</p>
-                </div>
-              </div>
-              <div class="swiper-slide c-slider__slide index__slide">
-                <a href="/blog/detail" class="inview">
-                  <figure class="c-picture__img index__img">
-                    <picture class="c-picture__img--inner">
-                      <img src="./assets/images/thumb/pf_02.jpg" alt="" style="object-position: top;">
+                      <img src="./assets/images/thumb/pf_03.jpg" alt="" loading="lazy">
                     </picture>
                   </figure>
                 </a>
@@ -302,7 +234,6 @@
           </div>
 
         </div>
-
 
         <div class="container index__foot">
           <div class="row justify-center">
@@ -327,19 +258,16 @@
       </div>
     </section>
 
-
-
-
     <section id="index-blog">
-      <div class="index__inner index__inner--blog inview">
+      <div class="index__inner">
 
         <h2 class="index__heading inview">
           <span class="-en animate-heading">ARTICLE</span>
-          <span class="-ja animate-heading">ブログ最新記事</span>
+          <span class="-ja animate-heading">NOTE記事</span>
         </h2>
 
-
         <div class="inview js-scroll--slideLeft">
+
 
           <div class="swiper-container c-slider index__slider js-index-slider">
 
@@ -348,7 +276,7 @@
                 <a href="/blog/detail" class="inview">
                   <figure class="c-picture__img index__img">
                     <picture class="c-picture__img--inner">
-                      <img src="./assets/images/banner/banner01.jpg" alt="">
+                      <img src="./assets/images/banner/banner01.jpg" alt="" loading="lazy">
                     </picture>
                   </figure>
                 </a>
@@ -369,7 +297,7 @@
                 <a href="/blog/detail" class="inview">
                   <figure class="c-picture__img index__img">
                     <picture class="c-picture__img--inner">
-                      <img src="./assets/images/banner/banner02.jpg" alt="">
+                      <img src="./assets/images/banner/banner02.jpg" alt="" loading="lazy">
                     </picture>
                   </figure>
                 </a>
@@ -388,7 +316,7 @@
                 <a href="/blog/detail" class="inview">
                   <figure class="c-picture__img index__img">
                     <picture class="c-picture__img--inner">
-                      <img src="./assets/images/banner/banner03.jpg" alt="">
+                      <img src="./assets/images/banner/banner03.jpg" alt="" loading="lazy">
                     </picture>
                   </figure>
                 </a>
@@ -407,7 +335,7 @@
                 <a href="/blog/detail" class="inview">
                   <figure class="c-picture__img index__img">
                     <picture class="c-picture__img--inner">
-                      <img src="./assets/images/banner/banner04.jpg" alt="">
+                      <img src="./assets/images/banner/banner04.jpg" alt="" loading="lazy">
                     </picture>
                   </figure>
                 </a>
@@ -425,6 +353,7 @@
             </div>
 
           </div>
+
 
         </div>
 
@@ -452,50 +381,72 @@
       </div>
     </section>
 
-    <section id="index-about" class="pb-32" style="overflow: hidden;">
-      <div class="index__inner index__inner--other">
+    <section>
 
+
+      <div class="index__inner">
         <h2 class="index__heading text-left inview">
           <span class="-en">OTHER</span>
           <span class="-ja">その他のコンテンツ</span>
         </h2>
 
 
-        <div class="container">
+        <div class="inview js-scroll--slideLeft">
 
-          <ul class="row">
-            <li class="l-other__item l-other__item--work col-6__sm col-4__md inview js-scroll--scale-delay">
-              <a href="#" class="c-mask">
-                <h2 class="l-other__heading">
-                  <span class="-ja">制作物一覧</span>
-                  <span class="-en">PORTFOLIO</span>
-                </h2>
-              </a>
-            </li>
-            <li class="l-other__item l-other__item--work col-6__sm col-4__md inview js-scroll--scale-delay">
-              <a href="#" class="c-mask">
-                <h2 class="l-other__heading">
-                  <span class="-ja">加工画像</span>
-                  <span class="-en">GALLERY</span>
-                </h2>
-              </a>
-            </li>
-            <li class="l-other__item l-other__item--contact col-6__sm col-4__md inview js-scroll--scale-delay">
-              <a href="#" class="c-mask">
-                <h2 class="l-other__heading">
-                  <span class="-ja">お問い合わせはこちら</span>
-                  <span class="-en">CONTACT</span>
-                </h2>
-              </a>
-            </li>
-          </ul>
+          <div class="swiper-container c-slider index__slider js-index-slider">
+
+            <div class="swiper-wrapper c-slider__wrap index__slideWrap">
+              <div class="swiper-slide c-slider__slide index__slide--other">
+                <a href="/work">
+
+                  <figure class="c-picture__img index__img">
+                    <picture class="c-picture__img--inner">
+                      <img src="/assets/images/hero_01.jpg" alt="" loading="lazy">
+                    </picture>
+                    <h2 class="index__heading--other">
+                      <span class="-ja">制作物一覧</span>
+                      <span class="-en">PORTFOLIO</span>
+                    </h2>
+                  </figure>
+
+                </a>
+              </div>
+              <div class="swiper-slide c-slider__slide index__slide--other">
+                <a href="/contact">
+
+                  <figure class="c-picture__img index__img">
+                    <picture class="c-picture__img--inner">
+                      <img src="/assets/images/hero_02.jpg" alt="" loading="lazy">
+                    </picture>
+                    <h2 class="index__heading--other">
+                      <span class="-ja">お問い合わせ</span>
+                      <span class="-en">CONTACT</span>
+                    </h2>
+                  </figure>
+
+                </a>
+              </div>
+            </div>
+
+          </div>
 
 
         </div>
 
+
+        <div class="container index__foot">
+          <div class="row justify-center">
+
+
+            <div class="col-6__sm index__column--slidebtn">
+              <div class="swiper-button-prev index__btn--slider index__btn--sliderPrev js-slider-btnPrev"></div>
+              <div class="swiper-button-next index__btn--slider index__btn--sliderNext js-slider-btnNext"></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
-
   </main>
 
   

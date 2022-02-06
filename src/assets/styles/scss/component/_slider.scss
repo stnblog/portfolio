@@ -1,6 +1,6 @@
 .c-slider {
   user-select: none;
-  padding: 0 calc((100vw - 1140px) / 2);
+  // padding: 0 calc((100vw - 1400px) / 2);
 
   &__heading {
     margin: 0 0 20px;
@@ -49,13 +49,13 @@
     }
 
     @include mq-target(md) {
-      margin-right: 30px;
-      width: calc((100% - 60px) / 2);
+      margin-right: 20px;
+      width: calc((100% - 40px) / 2);
     }
 
     @include mq-target(lg) {
-      margin-right: 30px;
-      width: calc((100% - 60px) / 3);
+      margin-right: 20px;
+      width: calc((100% - 60px) / 4);
     }
 
     &:last-child {

@@ -109,13 +109,13 @@ function scripts() {
 
 function startAppServer() {
   server.init({
-    // port : 80,
-    // proxy : "develop.wp/",
-    // notify: false,
-    // open: "external",
-    server: {
-      baseDir: './dist'
-    }
+    port : 80,
+    proxy : "portfolio.wp/",
+    notify: false,
+    open: "external",
+    // server: {
+    //   baseDir: './dist'
+    // }
   });
 
   watch('./src/assets/**/*.scss', styles);

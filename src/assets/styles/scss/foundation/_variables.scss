@@ -1,9 +1,11 @@
-$width: 1000px;
+$width: 1480px;
 
 $color-main:#B0B0B0;
 $color-sub: #fff;
 $color-key: #191e27;
 $color-bg: #191919;
+
+// #191919
 
 
 
@@ -27,5 +29,7 @@ $color-grey-dark-2: #777;
 $color-grey-dark-3: #999;
 $color-grey-dark-4: #1c1e22;
 $line: 1px solid $color-grey-light-2;
+$border-light-1 : 1px solid rgba(255, 255, 255, 0.09);
 $box-shadow-light-1: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+$box-shadow-light-2: 2px 4px 7px 0 rgb(0 0 0 / 20%);;
 $box-shadow-dark-1: 0px 0px 9px 2px rgb(0 0 0 / 40%);

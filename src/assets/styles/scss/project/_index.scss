@@ -1,62 +1,25 @@
-$indexWidth: 1015px;
-
 .index {
-
-  &--info {
-    @include absolute($bottom:0, $right:0);
-    padding: 30px;
-    background: $color-bg;
-  }
 
   &__inner {
     position: relative;
+    // overflow: hidden;
+    @include maxWidth($width);
     padding: 0 15px;
-
+    @include mq-target(lg) {
+      padding: 0 4%;
+    }
 
     &--about {
-      padding: 80px 0 0;
+      padding: 100px 15px 0;
 
       @include mq-target(sm) {
-        padding: 120px 0 80px;
+        padding: 100px 15px 90px;
       }
     }
 
-    &--work,
-    &--blog {
-      overflow: hidden;
-    }
-  }
-
-  &__wrap {
-    &--about {
-      max-width: 1200px;
-    }
-  }
-
-  &__head {
-    &--about {
-      position: relative;
-      width: 44%;
-    }
   }
 
   &__body {
-    &--about {
-      position: relative;
-      margin-left: -3%;
-      width: 53%;
-      z-index: 10;
-
-      @include mq(md) {
-        @include maxWidth(560px);
-      }
-
-      &Inner {
-        position: relative;
-        text-align: left;
-        padding: 0 15px 10px;
-      }
-    }
 
     &--work {
       padding: 10px;
@@ -68,175 +31,62 @@ $indexWidth: 1015px;
     }
   }
 
-  &__item {
-    &--info {
-      &:not(:first-of-type) {
-        margin: 10px 0 0;
-      }
-
-      & time {
-        position: relative;
-        width: 140px;
-        display: inline-block;
-        font-size: 1.2rem;
-        color: $color-grey-light-3;
-
-        &::after {
-          background: $color-main;
-          bottom: 0;
-          content: "";
-          height: 1px;
-          margin: auto;
-          position: absolute;
-          right: 14px;
-          top: 0;
-          width: 40px;
-        }
-      }
-    }
-  }
-
   &__column {
     &--slidebtn {
-      @include flex($justify:center);
+      display: none;
 
-      @include mq(xs) {
-        margin: 20px 0 0;
+      @include mq-target(sm) {
+        @include flex($justify:center);
       }
     }
   }
 
-  &__meta {
-    &--work {
-      text-align: left;
-      @include flex($align:center);
-      font-size: 1.3rem;
-      font-weight: 500;
-      font-size: 1.1rem;
-
-      & .-tag {
-        @include flex($align:center);
+  &__slide {
+    &--other {
+      a {
+        display: block;
         position: relative;
-        padding-right: 16px;
-
-        &::before {
-          content: "";
-          @include absolute($top:20%, $right:0);
-          width: 1px;
-          height: 14px;
-          background: $color-main;
+        overflow: hidden;
+        @include mq(md) {
+          box-shadow: 2px 4px 32px 0 rgb(0 0 0 / 56%);
+          border-radius: 12px;
         }
       }
 
-      & .-date {
-        padding-left: 16px;
-      }
     }
   }
 
   &__img {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: $box-shadow-light-1;
-
+    // border-radius: 4px;
+    margin: 0 0 16px;
+    box-shadow: $box-shadow-light-2;
     &::before {
-      padding-top: 62%;
-    }
-
-    &--about {
-      overflow: visible;
-      border-radius: 12px;
-      transition-delay: .4s;
-      z-index: 1;
-
-      &::before {
-        z-index: 1;
-      }
-
-      &::after {
-        content: "";
-        box-shadow: $box-shadow-dark-1;
-        @include absolute ($bottom: 50px, $left: 30px);
-        border-radius: 50%;
-        background: $color-sub;
-        width: 300px;
-        height: 300px;
-        z-index: -1;
-        transition: all 1s cubic-bezier(0.0, 0.0, 1.0, 1.0);
-
-        @include mq(md) {
-          width: 200px;
-          height: 200px;
-        }
-      }
-
-      &.is-anim {
-        &::after {
-          background: $color-red;
-        }
-      }
-
-      @include mq(md) {
-        margin: 30px auto 20px;
-      }
+      padding-top: 56%;
     }
   }
 
   &__heading {
-
-    &--about {
-      color: $color-sub;
-      margin: 0 0 20px;
+    &--other {
+      position: relative;
+      @include absCenter;
+      color: $color-bg;
+      z-index: 2;
+      font-weight: 500;
 
       &>span {
         display: block;
-        line-height: 1;
-        letter-spacing: .1em;
-      }
-
-      & .-en {
-        font-size: 1.2rem;
-        overflow: hidden;
       }
 
       & .-ja {
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 2.4rem;
-        margin: 10px 0 0;
-
-
-      }
-    }
-
-    &--work {
-      font-size: 2.6rem;
-      margin: 6px 0 16px;
-    }
-
-    &--article {
-      font-size: 1.5rem;
-      text-align: left;
-      letter-spacing: 0.075em;
-      line-height: 1.5;
-      margin: 16px 0 6px;
-    }
-  }
-
-  &__txt {
-    text-align: left;
-    margin-bottom: 30px;
-
-    &--about {
-      & .-intro {
         font-size: 1.4rem;
-        line-height: 2;
-        margin: 30px 0;
       }
 
-      & .-name {
-        text-align: right;
-        color: $color-sub;
+      & .-en {
+
+        text-transform: uppercase;
+        overflow: hidden;
+        margin: 12px 0 0;
+        font-size: 2.6rem;
       }
     }
   }
@@ -261,29 +111,32 @@ $indexWidth: 1015px;
 
       &Prev {
         &::after {
-          background-image: url(./../../assets/images/svg/arrow/arrow-left.svg);
+          background-image: url(./../../assets/images/SVG/arrow/arrow-left.svg);
         }
       }
 
       &Next {
         margin-left: 4px;
+
         &::after {
-          background-image: url(./../../assets/images/svg/arrow/arrow-right.svg);
+          background-image: url(./../../assets/images/SVG/arrow/arrow-right.svg);
         }
       }
     }
   }
 
   &__foot {
-    margin-top: 40px;
-    margin-bottom: 20px;
+    margin: 30px 0 50px;
+    max-width: 100%;
 
     a {
       position: relative;
-      padding: 24px 0;
+      padding: 20px 0;
       @include flex($justify:center, $align:center);
       text-transform: uppercase;
+      font-size: 1.4rem;
       transition: transform .6s ease;
+      color: $color-main;
 
       &:hover,
       &:active {
@@ -295,8 +148,8 @@ $indexWidth: 1015px;
       }
 
       & .-btn {
-        width: 30px;
-        height: 30px;
+        width: 26px;
+        height: 24px;
         cursor: pointer;
         margin-right: 20px;
         position: relative;
@@ -337,23 +190,28 @@ $indexWidth: 1015px;
   position: relative;
   text-align: left;
   z-index: 1;
+  // font-feature-settings: "palt";
   color: $color-sub;
-  font-weight: 500;
-  margin: 0 0 60px;
-  padding: 0 calc((100vw - $indexWidth) / 2);
+  margin: 0 0 30px;
+  // padding: 0 calc((100vw - 1440px) / 2);
 
   @include mq(md) {
-    margin: 80px 0 40px;
+    margin: 80px 0 20px;
   }
 
   &::after {
     content: "";
-    @include absolute($top:40%, $left:0);
+    @include absolute($top:27%, $left:0);
     width: 0;
+    // transform: translateY(-50%);
     height: 1px;
-    background: $color-sub;
+    background: hsla(0, 0%, 100%, 0.09);
     transition: all 1s ease;
-    transition-delay: .4s;
+    // transition-delay: .4s;
+
+    @include mq(xs) {
+      top: 14%;
+    }
   }
 
   &.is-anim {
@@ -364,8 +222,11 @@ $indexWidth: 1015px;
 
   & .-ja {
     display: block;
-    margin: 4px 0 0;
-    padding: 0 24px;
+    // margin: 4px 0 0;
+    padding: 14px 20px 0 0;
+    color: $color-main;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
   }
 
   & .-en {
@@ -373,13 +234,13 @@ $indexWidth: 1015px;
     z-index: 10;
     background: $color-bg;
     display: inline-block;
-    padding: 0 24px;
-    font-size: 2.6rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    padding: 0 20px 0 0;
+    // text-transform: uppercase;
+    font-size: 2rem;
+    // text-transform: lowercase;
 
     @include mq(xs) {
-      font-size: 2.4rem;
+      font-size: 1.8rem;
     }
   }
 }

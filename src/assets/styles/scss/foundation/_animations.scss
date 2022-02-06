@@ -37,7 +37,7 @@ $slide in $slides {
     opacity: 0;
     overflow: hidden;
     transform: ($slide);
-    transition: opacity 2s, transform 1s;
+    transition: opacity 1.4s, transform 1s;
     transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 
     &.is-anim {
@@ -78,7 +78,7 @@ $cover in $covers {
     }
 
     &::after {
-      background: $color-key;
+      background: $color-bg;
       z-index: 11;
     }
 
@@ -119,9 +119,9 @@ $cover in $covers {
         $timing-function: cubic-bezier(0.23, 1, 0.32, 1),
         $fill-mode: both);
 
-      @for $i from 1 through 9 {
+      @for $i from 1 through 6 {
         &:nth-child(#{$i}) {
-          animation-delay: $i * 0.1s;
+          animation-delay: $i * 0.2s;
         }
       }
     }

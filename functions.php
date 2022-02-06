@@ -127,7 +127,7 @@ add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
  */
 function prefix_nav_description( $item_output, $item, $depth, $args ) {
     if ( !empty( $item->description ) ) {
-    $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<p>' . $item->title . '</p>' . '<span class="menu-item-description">' . $item->description . '</span>' , $item_output );
+    $item_output = str_replace( '">' . $args->link_before . $item->title, '">' . $args->link_before . '<span class="-en">' . $item->title . '</span>' . '<span class="-ja">' . $item->description . '</span>' , $item_output );
     }
     return $item_output;
    }
@@ -151,22 +151,3 @@ add_filter('navigation_markup_template','custom_pagination_html');
  * 固定ページで抜粋を使えるようにする
  */
 add_post_type_support( 'page', 'excerpt' );
-
-
-/**
- * 投稿記事表示数
- */
-function change_posts_per_page($query) {
-    /* 管理画面,メインクエリに干渉しないために必須 */
-    if ( is_admin() || ! $query->is_main_query() ){
-        return;
-    }
-
-    /* カテゴリーページの表示件数を5件にする */
-    if ( $query->is_home() ) {
-        $query->set( 'posts_per_page', '12' );
-        return;
-    }
-
-    }
-    add_action( 'pre_get_posts', 'change_posts_per_page' );

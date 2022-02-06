@@ -20,46 +20,41 @@ if (elmIndexSwiper.length > 0) {
         prevEl: '.js-slider-btnPrev' + i,
         nextEl: '.js-slider-btnNext' + i,
       },
-
     });
   }
 }
 
-const skillSwiper = null;
-const createSwiper = function createSwiper() {
 
-  const skillSwiperOption = {
-    slidesPerView: 1,
-    loop: true,
-    loopAdditionalSlides: 1,
-    loopPreventsSlide: false,
-    grabCursor: true,
-    touchEventsTarget: true,
-    spaceBetween: 20,
-    centeredSlides: true,
-    scrollbar: {
-      el: '.p-skill__scrollbar--slide',
-      hide: false,
-      draggable: true,
-      grabCursor: true
-    },
-    breakpoints: {
-      767: {
-        slidesPerView: 2
-      },
-      999: {
-        slidesPerView: 3
-      }
-    },
-    wrapperClass: "p-skill__slideWrap",
-    slideClass: "p-skill__slide",
-    slideActiveClass: "p-skill__slide--active"
-  };
-  skillSwiper = new Swiper('.p-skill__slider', skillSwiperOption);
-  skillSwiper.on('slideChange', function () {
-    $body.attr("data-skillBg", skillSwiper.realIndex + 1);
-  });
 
-};
+const modalSwiper = new Swiper('.js-modal-slider', {
+  slidesPerView: 'auto',
+  centeredSlides: true,
+  effect: 'fade',
+  navigation: {
+    prevEl: '.js-modal--btnPrev',
+    nextEl: '.js-modal--btnNext',
+  },
+  pagination: {
+    el: '.js-modal--pagi',
+    type: 'fraction',
+		renderFraction: function (currentClass, totalClass) {
+			return 'Image ' + ' <span class="' + currentClass + '"></span>' + ' of ' + '<span class="' + totalClass + '"></span>';
+		}
+  },
+});
 
-createSwiper();
+$('.js-modal-open').on('click', function () {
+  var index = $(this).index();
+  modalSwiper.slideTo(index);
+  $('.l-modal').fadeIn();
+   $('body').addClass('is-lock');
+})
+
+
+$('.js-modal-close').on('click', function () {
+
+
+  $('.l-modal').fadeOut();
+  $('body').removeClass('is-lock');
+
+});

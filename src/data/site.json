@@ -14,15 +14,10 @@
       "description": "説明文",
       "filePath": "../"
     },
-    "blog": {
-      "name": "ブログ - ",
+    "gallery": {
+      "name": "ギャラリー - ",
       "description": "説明文",
       "filePath": "../"
-    },
-    "blogDetail": {
-      "name": "ブログ記事 - ",
-      "description": "説明文",
-      "filePath": "./../../"
     },
     "work": {
       "name": "制作物 - ",

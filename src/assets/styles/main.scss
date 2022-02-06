@@ -6,6 +6,7 @@
 @import "./scss/foundation/mixin";
 @import "./scss/foundation/base";
 @import "./scss/foundation/keyframes";
+@import "./scss/foundation/grid";
 @import "./scss/foundation/animations";
 
 // - pulugin
@@ -29,6 +30,8 @@
 @import "./scss/component/search";
 @import "./scss/component/filter";
 @import "./scss/component/slider";
+@import "./scss/component/meta";
+@import "./scss/component/modal";
 
 //  --------------------
 //  layout
@@ -41,6 +44,7 @@
 @import "./scss/layout/l-section";
 @import "./scss/layout/l-dropdown";
 @import "./scss/layout/l-other";
+@import "./scss/layout/l-modal";
 @import "./scss/layout/l-footer";
 
 //  --------------------
@@ -58,11 +62,10 @@
 //  --------------------
 //  project
 //  --------------------
-@import "./scss/project/hero";
-@import "./scss/project/skill";
-@import "./scss/project/work";
 @import "./scss/project/index";
+@import "./scss/project/intro";
+@import "./scss/project/hero";
+@import "./scss/project/gallery";
+@import "./scss/project/work";
 @import "./scss/project/about";
-@import "./scss/project/blog";
 @import "./scss/project/singlework";
-@import "./scss/project/singleblog";

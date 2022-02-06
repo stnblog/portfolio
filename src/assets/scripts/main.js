@@ -4,17 +4,16 @@ var $body = $("body");
 
 $(document).ready(function () {
 
+  $('.js-draw--trigger').on('click', function () {
+		$('.js-draw--trigger').toggleClass('is-active');
+		$('.js-draw--content').toggleClass('is-active');
+		$('.js-draw--bg').toggleClass('is-active');
+		$('body').toggleClass('lock');
+	})
+
+
   $("a[href*='http://']:not([href*='" + location.hostname + "']),[href*='https://']:not([href*='" + location.hostname + "'])").attr('target', '_blank').addClass('blank');
 
-
-  $('a[href^="#"]').on('click', function () {
-    var href = $(this).attr('href');
-    var position = $(href).offset().top;
-    $('html, body').animate({
-      'scrollTop': position
-    }, 500);
-    return false;
-  })
 
   $('.gallery-mons').isotope({
     itemSelector: '.js-filter-items',
@@ -64,15 +63,34 @@ $(document).ready(function () {
     });
   });
 
-  $(function () {
-    $('.p-skill__slideWrap div .p-skill__txt').matchHeight();
-    $('.blog__list .blog__item .blog__body').matchHeight();
-  });
+  $('section .index__inner .index__foot').matchHeight();
+  $('.p-about__list--content .p-about__item--content').matchHeight();
 
 });
 
 
 document.addEventListener('DOMContentLoaded', function () {
+
+  {
+
+    const tabTriggers = document.querySelectorAll('.js-tab--trigger');
+    const tabContents = document.querySelectorAll('.js-tab--content');
+
+    tabTriggers.forEach(trigger => trigger.addEventListener('click', e => {
+      e.preventDefault();
+
+      tabTriggers.forEach(trigger => {
+        trigger.classList.remove('is-active');
+      })
+
+      trigger.classList.add('is-active');
+
+      tabContents.forEach(content => content.classList.remove('is-active'));
+
+      document.getElementById(trigger.dataset.tab).classList.add('is-active');
+
+    }))
+  }
 
   {
     const el = document.querySelectorAll('.inview');
@@ -95,32 +113,32 @@ document.addEventListener('DOMContentLoaded', function () {
     els.forEach(el => io.observe(el));
   }
 
-  {
-    const el = document.querySelectorAll('.js-first-view');
-    const els = Array.prototype.slice.call(el);
-    const header = document.getElementById('js-header');
+  // {
+  //   const el = document.querySelectorAll('.js-first-view');
+  //   const els = Array.prototype.slice.call(el);
+  //   const header = document.getElementById('js-header');
 
-    const options = {
-      root: null,
-      rootMargin: '-50% 0px',
-      threshold: 0
-    };
-    const observer = new IntersectionObserver(callback, options);
-    els.forEach((el) => {
-      observer.observe(el);
-    });
+  //   const options = {
+  //     root: null,
+  //     rootMargin: '-50% 0px',
+  //     threshold: 0
+  //   };
+  //   const observer = new IntersectionObserver(callback, options);
+  //   els.forEach((el) => {
+  //     observer.observe(el);
+  //   });
 
-    function callback(entries) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          header.classList.add('is-active');
-        } else {
-          header.classList.remove('is-active');
-        }
-      });
-    }
+  //   function callback(entries) {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         header.classList.add('is-active');
+  //       } else {
+  //         header.classList.remove('is-active');
+  //       }
+  //     });
+  //   }
 
-  }
+  // }
 
   {
     const el = document.querySelectorAll('.animate-heading');
